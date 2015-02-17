@@ -3,8 +3,11 @@
     padding: 0;
 }
 body {
-    /*font: 71%/1.5 Verdana, Sans-Serif;*/
+    font: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: bold;
     background: #eee;
+    position: absolute;
+    bottom: 13px;
 }
 #container {
     margin: 100px auto;
@@ -64,7 +67,7 @@ body {
 }
 .keyboard .space {
     clear: left;
-    width: 100%;
+    width: 60%;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -78,13 +81,7 @@ body {
     border-color: #e5e5e5;
     cursor: pointer;
 }
-.keyboard li:active {
-    position: relative;
-    top: 1px;
-    left: 1px;
-    border-color: #e5e5e5;
-    cursor: pointer;
-}
+
 
 .line2{
     margin-left: 51px;
@@ -93,4 +90,8 @@ body {
 
 body{
     background-image: url("../images/giftly.png");
+}
+
+textarea{
+    text-align: right;
 }
