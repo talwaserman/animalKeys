@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Online Keyboard</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div id="container">
+<<<<<<< HEAD
+    <!--<textarea id="write" rows="6" cols="60"></textarea>-->
+    <div class="middlePart">
+        <div class="animaleImage">
+            <img src="images/animales/lion.jpg" alt="lion" style="width:448px;height:285px">
+        </div>
+        <div class="enlargedLatter">
+            <img src="images/letters/alef.png" alt="alef" style="width:448px;height:285px">
+        </div>
+    </div>
+
+    <ul class="keyboard">
+        <li class="letter delete icons fa fa-caret-square-o-left"></li>
+        <li class="letter">פ</li>
+        <li class="letter">ם</li>
+        <li class="letter">ן</li>
+        <li class="letter">ו</li>
+        <li class="letter">ט</li>
+        <li id="alefh" class="letter" name="alefh"></li>
+        <li class="letter">ר</li>
+        <li class="letter">ק</li>
+        <li class="letter">.</li>
+        <li class="letter">,</li>
+    </ul>
+=======
+    <div class="header">
+        <img src="images/sap_50x26.png" alt="" class="image" rows="1"/>
+        <input  type="text" class="textAreaHeader" value="game's name">
+
+        <div class="headerSelection">
+            <ul class="headerSelectionList">
+                <li class="item iconsButton"  onclick="handleIconsClick()">איקונים</li>
+                <li class="item charsButton" onclick="handleCharsClick()">אותיות</li>
+            </ul>
+        </div>
+    </div>
+        <!--<li class="letter delete icons fa fa-caret-square-o-left"></li>-->
+        <textarea class="textArea" id="write" rows="6" cols="60"></textarea>
+    <div class="line">
+        <ul class="keyboard">
+            <li class="letter "></li>
+            <li class="letter regular">פ</li>
+            <li class="letter regular">ן</li>
+            <li class="letter regular">ו</li>
+            <li class="letter regular">ט</li>
+            <li class="letter regular">א</li>
+            <li class="letter regular">ר</li>
+            <li class="letter regular">ק</li>
+            <li class="letter special">.</li>
+            <li class="letter special">,</li>
+        </ul>
+    </div>
+>>>>>>> 03660d1b7baf23848757195a23bcaeee858a8416
+    <div class="line2">
+        <ul class="keyboard">
+            <li class="letter suffix">ף</li>
+            <li class="letter suffix">ך</li>
+            <li class="letter regular">ל</li>
+            <li class="letter regular">ח</li>
+            <li class="letter regular">י</li>
+            <li class="letter regular">ע</li>
+            <li class="letter regular">כ</li>
+            <li class="letter regular">ג</li>
+            <li class="letter regular">ד</li>
+            <li class="letter regular">ש</li>
+        </ul>
+    </div>
+
+    <div class="line3">
+        <ul class="keyboard">
+            <li class="letter">return</li>
+            <li class="letter suffix">ץ</li>
+            <li class="letter regular">ת</li>
+            <li class="letter regular">צ</li>
+            <li class="letter regular">מ</li>
+            <li class="letter regular">נ</li>
+            <li class="letter regular">ה</li>
+            <li class="letter regular">ב</li>
+            <li class="letter regular">ס</li>
+            <li class="letter regular">ז</li>
+            <!--<li class="space lastitem">&nbsp;</li>-->
+        </ul>
+    </div>
+    <ul class="keyboard">
+        <li class="icons letter fa fa-keyboard-o"></li>
+        <li class="letter">.?123</li>
+        <li class="space lastitem">&nbsp;</li>
+        <li class="icons letter  fa fa-globe "></li>
+        <li class="letter">.?123</li>
+    </ul>
+
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/keyboard.js"></script>
+
+</body>
+</html>

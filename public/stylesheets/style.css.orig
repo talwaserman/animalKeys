@@ -7,16 +7,11 @@ body {
     font-weight: bold;
     background: #eee;
     position: absolute;
-    width: 100%;
-
+    bottom: 13px;
 }
 #container {
     margin: 100px auto;
-    width: 1023px;
-    position: absolute;
-    top: 356px;
-    left: -9px;
-    margin-bottom: 5px;
+    /*width: 688px;*/
 }
 #write {
     margin: 0 0 5px;
@@ -47,8 +42,6 @@ body {
     border: 1px solid #f9f9f9;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    background: yellow;
-    border: 1px solid black;
 }
 .capslock, .tab, .left-shift {
     clear: left;
@@ -113,8 +106,16 @@ textarea{
 
 .icons.icons{
     font-size: 200%;
-    color: black;
+    color: cornflowerblue;
     line-height: 63px;
+}
+
+<<<<<<< HEAD
+#alefh{
+    background-image: url("../images/letters/alef.png");
+    background-size: 75px 64px;
+    margin-left: 5px;
+    background-repeat: no-repeat;
 }
 
 .animaleImage{
@@ -125,7 +126,7 @@ textarea{
 .enlargedLatter{
     display: inline-block;
     margin-left: 101px;
-}
+=======
 .textAreaContainer{
 
     width: 100%;
@@ -138,6 +139,7 @@ textarea{
 }
 
 .textAreaHeader{
+    /*float: left;*/
     position: relative;
     background: none;
     border: none;
@@ -148,11 +150,7 @@ textarea{
 
 }
 .header{
-    font: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-    background: bisque;
-    height: 48px;
-    padding-top: 10px;
-    width:100%;
+    margin-left: 27px;
 }
 
 
@@ -187,18 +185,5 @@ textarea{
 
 .yellowBG{
     background: yellow !important;
-}
-.image{
-    width: 81px;
-}
-
-.gameTitle{
-    display: inline-block;
-    position: absolute;
-}
-
-.middlePart{
-    position: relative;
-    top: 58px;
-    left: 22px;
+>>>>>>> 03660d1b7baf23848757195a23bcaeee858a8416
 }
