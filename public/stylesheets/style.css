@@ -109,3 +109,20 @@ textarea{
     color: cornflowerblue;
     line-height: 63px;
 }
+
+#alefh{
+    background-image: url("../images/letters/alef.png");
+    background-size: 75px 64px;
+    margin-left: 5px;
+    background-repeat: no-repeat;
+}
+
+.animaleImage{
+    margin-left: 10px;
+    margin-bottom: 11px;
+    display: inline-block;
+}
+.enlargedLatter{
+    display: inline-block;
+    margin-left: 101px;
+}
