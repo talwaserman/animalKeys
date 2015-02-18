@@ -122,9 +122,13 @@ textarea{
 }
 
 .animaleImage{
-    margin-left: 10px;
     margin-bottom: 11px;
     display: inline-block;
+
+}
+.animaleImage img{
+    border: 3px solid black;
+    border-radius: 12px;
 }
 .enlargedLatter{
     display: inline-block;
@@ -157,29 +161,17 @@ textarea{
     height: 70px;
     padding-top: 10px;
     width:100%;
-    border-bottom: 1px solid black;
+    border-bottom: 5px solid yellow;
 }
 
-
-.specialChar{
-    background-color: #9ee11e !important;
-}
-
-.suffixChar{
-    background-color: #05cccc !important;
-}
 .subHeader{
     float: right;
     height: inherit;
     margin-right: 16px;
 }
 
-.yellowBG{
-    background: yellow !important;
-}
 .image{
-    width: 81px;
-    width: 86px;
+    width: 174px;
     position: absolute;
     top: 0px;
 }
