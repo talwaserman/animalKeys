@@ -3,9 +3,48 @@ $(function(){
         shift = false,
         capslock = false;
 
-    $('.keyboard li').click(function(){
+    $('.keyboard li').click(function(event){
         var $this = $(this),
             character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
+        if($('.enlargedLatter img').length > 0)
+        {
+            $('.enlargedLatter img').remove();
+        }
+        if(event.target.src)
+        {
+            var arr = event.target.src.split("/");
+        }
+        var imageLocation =  "images/letters/"+arr[arr.length-1];
+        var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
+        $('.enlargedLatter').append(div);
+
+
+        //compare image and letter
+        var tempArr = $('.animaleImage img')[0].src.split('/');
+        var imageName = tempArr[tempArr.length-1];
+        var letterFromImage = imageName.split('_')[1].split('.')[0];
+        var letter = imageLocation.split('/')[2].split('.')[0];
+        if(letter === letterFromImage )
+        {
+            var score = parseInt($('.smallBox.scoreNumber h1').text());
+            score += 10;
+            $('.smallBox.scoreNumber h1').text(score);
+
+            //clear enlarged letter
+            if($('.enlargedLatter img').length > 0)
+            {
+                $('.enlargedLatter img').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500);
+                $('.enlargedLatter img').animate({
+                opacity: 0
+            }, 1000, function() {
+              $('.enlargedLatter img').remove();
+            });
+
+            }
+
+            
+
+        }
 
         // Shift keys
         if ($this.hasClass('left-shift') || $this.hasClass('right-shift')) {
@@ -52,6 +91,8 @@ $(function(){
         // Add the character
         $write.html($write.html() + character);
     });
+
+
 
 
 });

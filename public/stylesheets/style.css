@@ -51,6 +51,20 @@ body {
     background: yellow;
     border: 1px solid black;
 }
+
+.titleHeader li{
+    float: right;
+    margin: 0 5px 5px 0;
+    width: 85px;
+    height: 64px;
+    line-height: 57px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #f9f9f9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: transparent;
+}
 .keyboard li:hover {
     cursor: pointer;
 }
