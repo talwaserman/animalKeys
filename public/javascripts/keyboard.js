@@ -52,4 +52,29 @@ $(function(){
         // Add the character
         $write.html($write.html() + character);
     });
+
+
 });
+function handleCharsClick(){
+
+    this.value = $('.charsButton').text()
+    $('.textArea').text('');
+
+    $('.special').addClass('specialChar')
+    $('.suffix').addClass('suffixChar')
+    $('.regular').addClass('yellowBG')
+
+
+
+}
+
+function handleIconsClick() {
+
+    this.value = $('.iconsButton').text();
+    $('.textArea').text('');
+
+    $('.special').removeClass('specialChar')
+    $('.suffix').removeClass('suffixChar')
+    $('.regular').removeClass('yellowBG')
+
+}

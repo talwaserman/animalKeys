@@ -11,54 +11,45 @@
 <body>
 
 <div id="container">
-    <!--<textarea id="write" rows="6" cols="60"></textarea>-->
-    <div class="middlePart">
-        <div class="animaleImage">
-            <img src="images/animales/lion.jpg" alt="lion" style="width:448px;height:285px">
-        </div>
-        <div class="enlargedLatter">
-            <img src="images/letters/alef.png" alt="alef" style="width:448px;height:285px">
+    <div class="header">
+        <img src="images/sap_50x26.png" alt="" class="image" rows="1"/>
+        <input  type="text" class="textAreaHeader" value="game's name">
+
+        <div class="headerSelection">
+            <ul class="headerSelectionList">
+                <li class="item iconsButton"  onclick="handleIconsClick()">איקונים</li>
+                <li class="item charsButton" onclick="handleCharsClick()">אותיות</li>
+            </ul>
         </div>
     </div>
-
-    <ul class="keyboard">
-        <li class="letter delete icons fa fa-caret-square-o-left"></li>
-        <li class="letter">פ</li>
-        <li class="letter">ם</li>
-        <li class="letter">ן</li>
-        <li class="letter">ו</li>
-        <li class="letter">ט</li>
-        <li id="alefh" class="letter" name="alefh"></li>
-        <li class="letter">ר</li>
-        <li class="letter">ק</li>
-        <li class="letter">.</li>
-        <li class="letter">,</li>
-    </ul>
     <div class="line2">
         <ul class="keyboard">
-            <li class="letter">ף</li>
-            <li class="letter">ך</li>
-            <li class="letter">ל</li>
-            <li class="letter">ח</li>
-            <li class="letter">י</li>
-            <li class="letter">ע</li>
-            <li class="letter">כ</li>
-            <li class="letter">ג</li>
-            <li class="letter">ד</li>
-            <li class="letter">ש</li>
+            <li class="letter suffix">ף</li>
+            <li class="letter suffix">ך</li>
+            <li class="letter regular">ל</li>
+            <li class="letter regular">ח</li>
+            <li class="letter regular">י</li>
+            <li class="letter regular">ע</li>
+            <li class="letter regular">כ</li>
+            <li class="letter regular">ג</li>
+            <li class="letter regular">ד</li>
+            <li class="letter regular">ש</li>
         </ul>
     </div>
+
     <div class="line3">
         <ul class="keyboard">
-            <li class="letter">ץ</li>
-            <li class="letter">ת</li>
-            <li class="letter">צ</li>
-            <li class="letter">מ</li>
-            <li class="letter">נ</li>
-            <li class="letter">ה</li>
-            <li class="letter">ב</li>
-            <li class="letter">ס</li>
-            <li class="letter">ז</li>
+            <li class="letter">return</li>
+            <li class="letter suffix">ץ</li>
+            <li class="letter regular">ת</li>
+            <li class="letter regular">צ</li>
+            <li class="letter regular">מ</li>
+            <li class="letter regular">נ</li>
+            <li class="letter regular">ה</li>
+            <li class="letter regular">ב</li>
+            <li class="letter regular">ס</li>
+            <li class="letter regular">ז</li>
+            <!--<li class="space lastitem">&nbsp;</li>-->
         </ul>
     </div>
     <ul class="keyboard">
@@ -68,6 +59,7 @@
         <li class="icons letter  fa fa-globe "></li>
         <li class="letter">.?123</li>
     </ul>
+
 </div>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>

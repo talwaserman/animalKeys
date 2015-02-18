@@ -126,3 +126,62 @@ textarea{
     display: inline-block;
     margin-left: 101px;
 }
+.textAreaContainer{
+
+    width: 100%;
+}
+
+.textAreaButton{
+    float: left;
+    width: 10%;
+
+}
+
+.textAreaHeader{
+    /*float: left;*/
+    position: relative;
+    background: none;
+    border: none;
+    padding-left: 10px;
+    margin-left: 30px;
+    font-size: 26px;
+    height: 30px;
+
+}
+.header{
+    margin-left: 27px;
+}
+
+
+.specialChar{
+    background-color: #9ee11e !important;
+}
+
+.suffixChar{
+    background-color: #05cccc !important;
+}
+.headerSelectionList li{
+    float: right;
+    font-size: 150%;
+    margin: 0 5px 5px 0;
+    width: 85px;
+
+    text-align: center;
+    background: #fff;
+    border: 1px solid #f9f9f9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+}
+.headerSelection{
+    float: right;
+    height: inherit;
+}
+
+.headerSelectionList{
+    list-style-type: none;
+}
+
+.yellowBG{
+    background: yellow !important;
+}
