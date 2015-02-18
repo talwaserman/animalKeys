@@ -11,102 +11,62 @@
 <body>
 
 <div id="container">
-    <textarea id="write" rows="6" cols="60"></textarea>
-    <ul class="keyboard">
-        <li class="letter"></li>
-    <textarea id="write" rows="6" cols="60"></textarea>
-    <ul class="keyboard">
-        <li class="letter delete icons fa fa-caret-square-o-left"></li>
     <div class="header">
         <img src="images/sap_50x26.png" alt="" class="image" rows="1"/>
-        <input  type="text" class="textAreaHeader" value="game's name"></input>
-        <input class="headerInput" value="age:">
-        <select class="comboBox">
-            <option value="2-4">2-4</option>
-            <option value="5-7">5-7</option>
-            <option value="8-10">8-10</option>
-            <option value="11-14">11-14</option>
-        </select>
-    </div>
-        <textarea class="textArea" id="write" rows="6" cols="60"></textarea>
-        <ul class="keyboard">
-            <li class="letter"></li>
-            <li class="letter">פ</li>
-            <li class="letter">ם</li>
-            <li class="letter">ן</li>
-            <li class="letter">ו</li>
-            <li class="letter">ט</li>
-            <li class="letter">א</li>
-            <li class="letter">ר</li>
-            <li class="letter">ק</li>
-            <li class="letter">.</li>
-            <li class="letter">,</li>
-        </ul>
-        <div class="line2">
-            <ul class="keyboard">
-                <li class="letter">ף</li>
-                <li class="letter">ך</li>
-                <li class="letter">ל</li>
-                <li class="letter">ח</li>
-                <li class="letter">י</li>
-                <li class="letter">ע</li>
-                <li class="letter">כ</li>
-                <li class="letter">ג</li>
-                <li class="letter">ד</li>
-                <li class="letter">ש</li>
+        <input  type="text" class="textAreaHeader" value="game's name">
+
+        <div class="headerSelection">
+            <ul class="headerSelectionList">
+                <li class="item iconsButton"  onclick="handleIconsClick()">איקונים</li>
+                <li class="item charsButton" onclick="handleCharsClick()">אותיות</li>
             </ul>
         </div>
+    </div>
+        <!--<li class="letter delete icons fa fa-caret-square-o-left"></li>-->
+        <textarea class="textArea" id="write" rows="6" cols="60"></textarea>
+    <div class="line">
         <ul class="keyboard">
-            <li class="letter">return</li>
-            <li class="letter">ץ</li>
-            <li class="letter">ת</li>
-            <li class="letter">צ</li>
-            <li class="letter">מ</li>
-            <li class="letter">נ</li>
-            <li class="letter">ה</li>
-            <li class="letter">ב</li>
-            <li class="letter">ס</li>
-            <li class="letter">ז</li>
+            <li class="letter "></li>
+            <li class="letter regular">פ</li>
+            <li class="letter regular">ן</li>
+            <li class="letter regular">ו</li>
+            <li class="letter regular">ט</li>
+            <li class="letter regular">א</li>
+            <li class="letter regular">ר</li>
+            <li class="letter regular">ק</li>
+            <li class="letter special">.</li>
+            <li class="letter special">,</li>
         </ul>
+    </div>
+    <div class="line2">
+        <ul class="keyboard">
+            <li class="letter suffix">ף</li>
+            <li class="letter suffix">ך</li>
+            <li class="letter regular">ל</li>
+            <li class="letter regular">ח</li>
+            <li class="letter regular">י</li>
+            <li class="letter regular">ע</li>
+            <li class="letter regular">כ</li>
+            <li class="letter regular">ג</li>
+            <li class="letter regular">ד</li>
+            <li class="letter regular">ש</li>
+        </ul>
+    </div>
+
     <div class="line3">
         <ul class="keyboard">
             <li class="letter">return</li>
-            <li class="letter">ץ</li>
-            <li class="letter">ת</li>
-            <li class="letter">צ</li>
-            <li class="letter">מ</li>
-            <li class="letter">נ</li>
-            <li class="letter">ה</li>
-            <li class="letter">ב</li>
-            <li class="letter">ס</li>
-            <li class="letter">ז</li>
-            <li class="space lastitem">&nbsp;</li>
+            <li class="letter suffix">ץ</li>
+            <li class="letter regular">ת</li>
+            <li class="letter regular">צ</li>
+            <li class="letter regular">מ</li>
+            <li class="letter regular">נ</li>
+            <li class="letter regular">ה</li>
+            <li class="letter regular">ב</li>
+            <li class="letter regular">ס</li>
+            <li class="letter regular">ז</li>
+            <!--<li class="space lastitem">&nbsp;</li>-->
         </ul>
-    <ul class="keyboard">
-        <li class="letter">return</li>
-        <li class="letter">ץ</li>
-        <li class="letter">ת</li>
-        <li class="letter">צ</li>
-        <li class="letter">מ</li>
-        <li class="letter">נ</li>
-        <li class="letter">ה</li>
-        <li class="letter">ב</li>
-        <li class="letter">ס</li>
-        <li class="letter">ז</li>
-    </ul>
-    <ul class="keyboard">
-        <li class="letter">return</li>
-        <li class="letter">ץ</li>
-        <li class="letter">ת</li>
-        <li class="letter">צ</li>
-        <li class="letter">מ</li>
-        <li class="letter">נ</li>
-        <li class="letter">ה</li>
-        <li class="letter">ב</li>
-        <li class="letter">ס</li>
-        <li class="letter">ז</li>
-        <li class="space lastitem">&nbsp;</li>
-    </ul>
     </div>
     <ul class="keyboard">
         <li class="icons letter fa fa-keyboard-o"></li>

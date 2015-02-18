@@ -133,17 +133,39 @@ textarea{
 
 }
 .header{
-    margin-left: 18px;
+    margin-left: 27px;
 }
 
-.headerInput{
-    background: none;
-    border: none;
-    width: 50px;
-    font-size: 26px;
+
+.specialChar{
+    background-color: #9ee11e !important;
 }
 
-.comboBox{
-    font-size: 20px;
+.suffixChar{
+    background-color: #05cccc !important;
+}
+.headerSelectionList li{
+    float: right;
+    font-size: 150%;
+    margin: 0 5px 5px 0;
+    width: 85px;
+
+    text-align: center;
+    background: #fff;
+    border: 1px solid #f9f9f9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+}
+.headerSelection{
+    float: right;
+    height: inherit;
 }
 
+.headerSelectionList{
+    list-style-type: none;
+}
+
+.yellowBG{
+    background: yellow !important;
+}
