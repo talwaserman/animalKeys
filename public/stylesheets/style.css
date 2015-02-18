@@ -7,11 +7,16 @@ body {
     font-weight: bold;
     background: #eee;
     position: absolute;
-    bottom: 13px;
+    width: 100%;
+
 }
 #container {
     margin: 100px auto;
-    /*width: 688px;*/
+    width: 1023px;
+    position: absolute;
+    top: 356px;
+    left: -9px;
+    margin-bottom: 5px;
 }
 #write {
     margin: 0 0 5px;
@@ -138,7 +143,6 @@ textarea{
 }
 
 .textAreaHeader{
-    /*float: left;*/
     position: relative;
     background: none;
     border: none;
@@ -149,7 +153,11 @@ textarea{
 
 }
 .header{
-    margin-left: 27px;
+    font: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    background: bisque;
+    height: 48px;
+    padding-top: 10px;
+    width:100%;
 }
 
 
@@ -184,4 +192,18 @@ textarea{
 
 .yellowBG{
     background: yellow !important;
+}
+.image{
+    width: 81px;
+}
+
+.gameTitle{
+    display: inline-block;
+    position: absolute;
+}
+
+.middlePart{
+    position: relative;
+    top: 58px;
+    left: 22px;
 }
