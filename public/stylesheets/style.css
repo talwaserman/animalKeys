@@ -35,6 +35,7 @@ body {
     padding: 0;
     list-style: none;
 }
+
 .keyboard li {
     float: right;
     font-size: 150%;
@@ -49,6 +50,9 @@ body {
     -webkit-border-radius: 5px;
     background: yellow;
     border: 1px solid black;
+}
+.keyboard li:hover {
+    cursor: pointer;
 }
 .capslock, .tab, .left-shift {
     clear: left;
@@ -150,9 +154,10 @@ textarea{
 .header{
     font: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     background: bisque;
-    height: 48px;
+    height: 70px;
     padding-top: 10px;
     width:100%;
+    border-bottom: 1px solid black;
 }
 
 
@@ -163,26 +168,10 @@ textarea{
 .suffixChar{
     background-color: #05cccc !important;
 }
-.headerSelectionList li{
-    float: right;
-    font-size: 150%;
-    margin: 0 5px 5px 0;
-    width: 85px;
-
-    text-align: center;
-    background: #fff;
-    border: 1px solid #f9f9f9;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-
-}
-.headerSelection{
+.subHeader{
     float: right;
     height: inherit;
-}
-
-.headerSelectionList{
-    list-style-type: none;
+    margin-right: 16px;
 }
 
 .yellowBG{
@@ -190,11 +179,21 @@ textarea{
 }
 .image{
     width: 81px;
+    width: 86px;
+    position: absolute;
+    top: 0px;
+}
+.smallBox{
+    display: inline-block;
+    margin-right: 16px;
+    font-size: 168%;
 }
 
 .gameTitle{
     display: inline-block;
     position: absolute;
+    font-size: 168%;
+    left:374px;
 }
 
 .middlePart{
