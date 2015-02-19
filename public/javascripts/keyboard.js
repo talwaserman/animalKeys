@@ -13,7 +13,7 @@ $(function(){
 
         if(event.target.className.split(" ")[0] === "space")
         {
-            debugger;
+
             if($('.animaleImage img').length > 0)
             {
                 $('.animaleImage img').remove();
@@ -29,6 +29,11 @@ $(function(){
 
 
             }
+        }
+        else{
+            debugger;
+            var snd = new Audio("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
+            snd.play();
         }
 
         var $this = $(this),
@@ -56,7 +61,7 @@ $(function(){
             var snd = new Audio("./sounds/success.wav");
             snd.play();
             var score = parseInt($('.smallBox.scoreNumber h1').text());
-            score += 10;
+            score += 1;
             $('.smallBox.scoreNumber h1').text(score);
 
             //clear enlarged letter
