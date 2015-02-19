@@ -19,7 +19,7 @@ $(function(){
                 $('.animaleImage img').remove();
 
                 var newimage = $('<img />').attr({
-                    src: "images/animales/"+imageList[_getRandomImage()]
+                    src: "/images/animales/"+imageList[_getRandomImage()]
                 }).css({
                         width:448,
                         height:285

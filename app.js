@@ -77,6 +77,6 @@ app.get('/animalList',function(req, res, next){
 
     return app;
 }
-
+//asdasdas
 //To remember
 /* .replace(/.jpg|png|JPG|PNG/g, '')*/
