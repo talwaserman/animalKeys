@@ -12,7 +12,6 @@ var routes = require('./routes');
 var users = require('./routes/user');
 
 
-
 var app = express();
 app.set('port', process.env.PORT || 3000);
 
@@ -60,5 +59,24 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.get('/animalList',function(req, res, next){
+
+    var imagesArray = [];
+    var walker = require('async-walker');
+    walker('./public/images/animales').then(function(files) {
+        var arr = files.join(',');
+        arr = arr.replace(/public\\images\\animales\\/g, '');
+        console.log(arr); // => Files array: ['./path/to/file.js']
+        return res.status(200).send({images:arr});
+    });
+
+    /*next();*/
+});
+
+
+
     return app;
 }
+
+//To remember
+/* .replace(/.jpg|png|JPG|PNG/g, '')*/

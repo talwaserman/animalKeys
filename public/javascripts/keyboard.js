@@ -1,9 +1,36 @@
 $(function(){
+
+    var imageList;
+    $.get(location.origin+"/animalList", function( data ) {
+        imageList = JSON.parse(data).images.split(',');
+    });
+
     var $write = $('#write'),
         shift = false,
         capslock = false;
 
     $('.keyboard li').click(function(event){
+
+        if(event.target.className.split(" ")[0] === "space")
+        {
+            debugger;
+            if($('.animaleImage img').length > 0)
+            {
+                $('.animaleImage img').remove();
+
+                var newimage = $('<img />').attr({
+                    src: "images/animales/"+imageList[_getRandomImage()]
+                }).css({
+                        width:448,
+                        height:285
+                    });
+
+                $('.animaleImage').append(newimage);
+
+
+            }
+        }
+
         var $this = $(this),
             character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
         if($('.enlargedLatter img').length > 0)
@@ -26,6 +53,8 @@ $(function(){
         var letter = imageLocation.split('/')[2].split('.')[0];
         if(letter === letterFromImage )
         {
+            var snd = new Audio("./sounds/success.wav");
+            snd.play();
             var score = parseInt($('.smallBox.scoreNumber h1').text());
             score += 10;
             $('.smallBox.scoreNumber h1').text(score);
@@ -33,12 +62,7 @@ $(function(){
             //clear enlarged letter
             if($('.enlargedLatter img').length > 0)
             {
-                $('.enlargedLatter img').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500);
-                $('.enlargedLatter img').animate({
-                opacity: 0
-            }, 1000, function() {
-              $('.enlargedLatter img').remove();
-            });
+                $('.enlargedLatter img').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
 
             }
 
@@ -93,29 +117,12 @@ $(function(){
     });
 
 
-
+    function _getRandomImage(){
+        return Math.floor(Math.random()*imageList.length)+1;
+    }
 
 });
-function handleCharsClick(){
-
-    this.value = $('.charsButton').text()
-    $('.textArea').text('');
-
-    $('.special').addClass('specialChar')
-    $('.suffix').addClass('suffixChar')
-    $('.regular').addClass('yellowBG')
 
 
 
-}
 
-function handleIconsClick() {
-
-    this.value = $('.iconsButton').text();
-    $('.textArea').text('');
-
-    $('.special').removeClass('specialChar')
-    $('.suffix').removeClass('suffixChar')
-    $('.regular').removeClass('yellowBG')
-
-}
