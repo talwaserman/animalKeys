@@ -65,7 +65,7 @@ app.get('/animalList',function(req, res, next){
     var walker = require('async-walker');
     walker('./public/images/animales').then(function(files) {
         var arr = files.join(',');
-        arr = arr.replace(/public\\images\\animales\\/g, '');
+        arr = arr.replace(/public\\images\\animales\\/g, '').replace(/public\/images\/animales\//g, '');
         console.log(arr); // => Files array: ['./path/to/file.js']
         return res.status(200).send({images:arr});
     });
