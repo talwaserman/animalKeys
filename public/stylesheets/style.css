@@ -175,6 +175,9 @@ textarea{
     float: right;
     height: inherit;
     margin-right: 16px;
+    top: 13px;
+    right: 0px;
+    position: absolute;
 }
 
 .image{
@@ -185,14 +188,16 @@ textarea{
 .smallBox{
     display: inline-block;
     margin-right: 16px;
-    font-size: 168%;
+    font-size: 189%;
 }
-
+.smallBox.scoreNumber{
+    top: -6px;
+    position: relative;
+}
 .gameTitle{
-    display: inline-block;
-    position: absolute;
-    font-size: 168%;
-    left:374px;
+    display: inherit;
+    width: 500px;
+    margin: 0 auto;
 }
 
 .middlePart{
