@@ -31,7 +31,6 @@ $(function(){
             }
         }
         else{
-            debugger;
             var snd = new Audio("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
             snd.play();
         }
@@ -58,11 +57,19 @@ $(function(){
         var letter = imageLocation.split('/')[2].split('.')[0];
         if(letter === letterFromImage )
         {
+
+
             var snd = new Audio("./sounds/success.wav");
             snd.play();
             var score = parseInt($('.smallBox.scoreNumber h1').text());
+            $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
             score += 1;
+            $('.smallBox.scoreNumber').css( "color", "green");
             $('.smallBox.scoreNumber h1').text(score);
+            setTimeout(function(){
+                $('.smallBox.scoreNumber').css( "color", "black");
+
+            },4000)
 
             //clear enlarged letter
             if($('.enlargedLatter img').length > 0)
@@ -70,8 +77,10 @@ $(function(){
                 $('.enlargedLatter img').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
 
             }
-
-            
+        }
+        else{
+            var snd = new Audio("./sounds/wrong.wav");
+            snd.play();
 
         }
 
