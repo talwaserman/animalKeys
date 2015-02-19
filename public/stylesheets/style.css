@@ -10,14 +10,7 @@ body {
     width: 100%;
 
 }
-#container {
-    margin: 100px auto;
-    width: 1023px;
-    position: absolute;
-    top: 356px;
-    left: -9px;
-    margin-bottom: 5px;
-}
+
 #write {
     margin: 0 0 5px;
     padding: 5px;
@@ -206,4 +199,52 @@ textarea{
     position: relative;
     top: 58px;
     left: 22px;
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .middlePart{
+        position: relative;
+        margin: 0px auto;
+        width: 1025px;
+    }
+    #container {
+        margin: 100px auto;
+        width: 1023px;
+
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: 1200px) and ( min-width: 813px) {
+    .middlePart{
+        position: relative;
+        top: 58px;
+        left: 22px;
+    }
+    #container {
+        margin: 100px auto;
+        width: 1023px;
+        position: absolute;
+        top: 356px;
+        left: -9px;
+        margin-bottom: 5px;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 813px) {
+    .middlePart{
+        position: relative;
+        top: 58px;
+        left: 22px;
+    }
+    #container {
+        margin: 100px auto;
+        width: 1023px;
+        position: absolute;
+        top: 356px;
+        left: -9px;
+        margin-bottom: 5px;
+    }
 }
