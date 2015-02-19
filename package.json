@@ -1,9 +1,12 @@
 {
-  "name": "application-name",
+  "name": "Animalkeys",
   "version": "0.0.1",
+  "description": "learn the alefh bet",
+  "author": "Tal Waserman",
   "private": true,
+  "main": "server.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": " node server.js"
   },
   "dependencies": {
     "express": "~3.4.8",
@@ -12,9 +15,11 @@
     "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
-    "jade": "~1.3.0"
+    "jade": "~1.3.0",
+    "http": "0.0.0",
+    "connect": "^3.3.4"
   },
-    "engines": {
-        "node": "0.10.x"
-    }
+  "engines": {
+    "node": "0.10.x"
+  }
 }
