@@ -13,10 +13,10 @@ mainApp.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvide
             templateUrl : '/views/home.html'
         })
 
-        .state('/completeTheWord', {
+        .state('completeTheWord', {
             url:'/completeTheWord',
             templateUrl : '/views/completeTheWord.html',
-            controller: 'completeTheWord'
+            controller: 'completeTheWordCTR'
         })
 
         .state('firstLetter', {
