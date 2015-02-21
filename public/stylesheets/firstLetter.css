@@ -200,6 +200,9 @@ textarea{
     margin: 0 auto;
 }
 
+.image.backIcon{
+    cursor: pointer;
+}
 .middlePart{
     position: relative;
     top: 58px;
