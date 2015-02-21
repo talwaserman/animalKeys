@@ -212,6 +212,7 @@ textarea{
         position: relative;
         margin: 0px auto;
         width: 1025px;
+        top: 12px;
     }
     #container {
         margin: 100px auto;
@@ -226,12 +227,13 @@ textarea{
         position: relative;
         top: 58px;
         left: 22px;
+        top: 12px;
     }
     #container {
         margin: 100px auto;
         width: 1023px;
         position: absolute;
-        top: 356px;
+        top: 315px;
         left: -9px;
         margin-bottom: 5px;
     }
