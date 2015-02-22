@@ -191,13 +191,13 @@ textarea{
     font-size: 189%;
 }
 .smallBox.scoreNumber{
-    top: -6px;
+    top: -18px;
     position: relative;
 }
 .gameTitle{
     display: inherit;
     width: 500px;
-    margin: 0 auto;
+    margin-left: 78px;
 }
 
 .image.backIcon{
@@ -234,7 +234,7 @@ textarea{
     }
     #container {
         margin: 100px auto;
-        width: 1023px;
+        /*width: 1023px;*/
         position: absolute;
         top: 315px;
         left: -9px;
