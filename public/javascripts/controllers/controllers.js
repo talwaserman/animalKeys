@@ -185,6 +185,8 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
 
                     $('.animaleImage').append(newimage);
 
+                    var snd = new Audio("./sounds/swipe.mp3");
+                    snd.play();
 
                 }
             }
@@ -193,20 +195,20 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
                 snd.play();
             }
 
-            var $this = $(this),
-                character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
-            if($('.enlargedLatter img').length > 0)
+            if(event.target.className !== "space")
             {
-                $('.enlargedLatter img').remove();
+                if($('.enlargedLatter img').length > 0)
+                {
+                    $('.enlargedLatter img').remove();
+                }
+                if(event.target.src)
+                {
+                    var arr = event.target.src.split("/");
+                }
+                var imageLocation =  "images/letters/"+arr[arr.length-1];
+                var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
+                $('.enlargedLatter').append(div);
             }
-            if(event.target.src)
-            {
-                var arr = event.target.src.split("/");
-            }
-            var imageLocation =  "images/letters/"+arr[arr.length-1];
-            var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
-            $('.enlargedLatter').append(div);
-
 
             //compare image and letter
             var tempArr = $('.animaleImage img')[0].src.split('/');
@@ -236,7 +238,8 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
 
                 }
             }
-            else{
+
+            else if(event.target.className !== "space"){
                 var snd = new Audio("./sounds/wrong.wav");
                 snd.play();
 
