@@ -1,6 +1,33 @@
+//Alef, Bet, Gimel, Dalet, Hey, Vav, Zain, Chet, Tet, Yud, Kaf, Lamed, Mem , Nun, Samech, Ayin, Pe, Zadick, Kuf, Reish , Shin, Taf
+//
 [
+    {
+        "image": "afarsek_Alef",
+        "letters": ["Alef","Pe","Reish","Samech","Kuf"]
+    },
+    {
+        "image": "agas_Alef",
+        "letters": ["Alef","Gimel","Samech"]
+    },
+    {
+        "image": "agvaniet_Ayin",
+        "letters": ["Ayin","Gimel","Bet","Nun","Yud","Hey"]
+    },
+    {
+        "image": "almond_Shin",
+        "letters": ["Shin","Kuf","Dalet"]
+    },
+    {
+        "image": "arnav_Alef",
+        "letters": ["Alef","Reish","Nun","Bet"]
+    },
+    {
+        "image": "lion_Alef",
+        "letters": ["Alef","Reish","Yud","Hey"]
+    },
     {
         "image": "lion_Alef",
         "letters": ["Alef","Reish","Yud","Hey"]
     }
+
 ]

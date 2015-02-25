@@ -9,7 +9,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
             imageList = data.images.split(',');
         });
 
-        var allWords;
+        /*var allWords;
         $http.get('javascripts/controllers/words.json').success(function(data) {
             allWords = data;
             //build the initial words;
@@ -19,11 +19,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
                 var div = $('<div class="completeLetter"></div>');
                 $('.completeWord').append(div);
             }
-        });
-
-
-
-
+        });*/
 
         $('.keyboard li').on('tap',(function(event){
 
@@ -43,11 +39,24 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
 
                     $('.animaleImage').append(newimage);
 
+                    if($('.completeWord img').length > 0)
+                    {
+                        $('.completeWord img').remove();
+                    }
+
 
                 }
             }
             else{
-                var snd = new Audio("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
+
+                var length = event.target.src.split("/").length;
+                var letter = event.target.src.split("/")[length-1];
+
+                var imageLocation =  "images/letters/"+letter;
+                var div = $('<img src="'+imageLocation+'" style="float:right;width:60px;height:60px">');
+                $('.completeWord').append(div);
+
+                /*var snd = new Audio("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
                 snd.play();
 
                 if($('.enlargedLatter img').length > 0)
@@ -60,7 +69,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
                 }
                 var imageLocation =  "images/letters/"+arr[arr.length-1];
                 var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
-                $('.enlargedLatter').append(div);
+                $('.enlargedLatter').append(div);*/
             }
 
 
@@ -68,7 +77,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
 
 
             //compare image and letter
-            var tempArr = $('.animaleImage img')[0].src.split('/');
+            /*var tempArr = $('.animaleImage img')[0].src.split('/');
             var imageName = tempArr[tempArr.length-1];
             var letterFromImage = imageName.split('_')[1].split('.')[0];
             var letter = imageLocation.split('/')[2].split('.')[0];
@@ -97,7 +106,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
             }
             else{
 
-            }
+            }*/
 
         }));
 
@@ -105,7 +114,6 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
         function _getRandomImage(){
             return Math.floor(Math.random()*imageList.length)+1;
         }
-
     });
 }]);
 
@@ -189,6 +197,7 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
                 var imageLocation =  "images/letters/"+arr[arr.length-1];
                 var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
                 $('.enlargedLatter').append(div);
+
             }
 
             //compare image and letter
