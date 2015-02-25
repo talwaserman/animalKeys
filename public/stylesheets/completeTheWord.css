@@ -77,10 +77,10 @@ body {
     background: transparent;
 }
 .keyboard li:hover {
-    cursor: -moz-grab;
+    cursor: pointer;
 }
 .keyboard li:active{
-    cursor: -webkit-grabbing;
+    cursor: pointer;
 }
 .capslock, .tab, .left-shift {
     clear: left;

@@ -4,6 +4,8 @@
 mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function($scope, $location, $http) {
     $(function(){
 
+        var imageIndex = 0;
+        $scope.wordsArr = [], wordEntered = [];
         var imageList;
         $.get(location.origin+"/animalList", function( data ) {
             imageList = data.images.split(',');
@@ -25,17 +27,13 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
 
             if(event.target.className.split(" ")[0] === "space")
             {
-
                 if($('.animaleImage img').length > 0)
                 {
                     $('.animaleImage img').remove();
 
                     var newimage = $('<img />').attr({
-                        src: "/images/animales/"+imageList[_getRandomImage()]
-                    }).css({
-                            width:448,
-                            height:285
-                        });
+                        src: "/images/animales/"+imageList[imageIndex]
+                    }).css({width:448,height:285 });
 
                     $('.animaleImage').append(newimage);
 
@@ -43,9 +41,28 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
                     {
                         $('.completeWord img').remove();
                     }
-
-
                 }
+
+                imageIndex++;
+                wordEntered = [];
+
+
+            }
+            else if(event.target.className.split(" ")[0] === "backSpace"){
+                if($('.completeWord img').length > 0)
+                {
+                    $('.completeWord img')[$('.completeWord img').length-1].remove();
+                    wordEntered.pop();
+                }
+
+            }
+            else if(event.target.className.split(" ")[0] === "enter"){
+                $scope.wordsArr.push(
+                    {
+                        "image": imageList[imageIndex-1],
+                        "letters": wordEntered
+                    });
+                wordEntered = [];
             }
             else{
 
@@ -55,9 +72,8 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
                 var imageLocation =  "images/letters/"+letter;
                 var div = $('<img src="'+imageLocation+'" style="float:right;width:60px;height:60px">');
                 $('.completeWord').append(div);
-
+                wordEntered.push(letter);
             }
-
         }));
 
 
@@ -185,50 +201,7 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
 
             }
 
-            // Shift keys
-            if ($this.hasClass('left-shift') || $this.hasClass('right-shift')) {
-                $('.letter').toggleClass('uppercase');
-                $('.symbol span').toggle();
 
-                shift = (shift === true) ? false : true;
-                capslock = false;
-                return false;
-            }
-
-            // Caps lock
-            if ($this.hasClass('capslock')) {
-                $('.letter').toggleClass('uppercase');
-                capslock = true;
-                return false;
-            }
-
-            // Delete
-            if ($this.hasClass('delete')) {
-                var html = $write.html();
-
-                $write.html(html.substr(0, html.length - 1));
-                return false;
-            }
-
-            // Special characters
-            if ($this.hasClass('symbol')) character = $('span:visible', $this).html();
-            if ($this.hasClass('space')) character = ' ';
-            if ($this.hasClass('tab')) character = "\t";
-            if ($this.hasClass('return')) character = "\n";
-
-            // Uppercase letter
-            if ($this.hasClass('uppercase')) character = character.toUpperCase();
-
-            // Remove shift once a key is clicked.
-            if (shift === true) {
-                $('.symbol span').toggle();
-                if (capslock === false) $('.letter').toggleClass('uppercase');
-
-                shift = false;
-            }
-
-            // Add the character
-            $write.html($write.html() + character);
         }));
 
 

@@ -1,33 +1,438 @@
-//Alef, Bet, Gimel, Dalet, Hey, Vav, Zain, Chet, Tet, Yud, Kaf, Lamed, Mem , Nun, Samech, Ayin, Pe, Zadick, Kuf, Reish , Shin, Taf
-//
 [
     {
-        "image": "afarsek_Alef",
-        "letters": ["Alef","Pe","Reish","Samech","Kuf"]
+        "image": "afarsek_Alef.jpg",
+        "letters": ["Alef.png", "Pe.png", "Reish.png", "Samech.png", "Kuf.png"]
     },
     {
-        "image": "agas_Alef",
-        "letters": ["Alef","Gimel","Samech"]
+        "image": "agas_Alef.jpg",
+        "letters": ["Alef.png", "Gimel.png", "Samech.png"]
     },
     {
-        "image": "agvaniet_Ayin",
-        "letters": ["Ayin","Gimel","Bet","Nun","Yud","Hey"]
+        "image": "agvaniet_Ayin.jpg",
+        "letters": ["Ayin.png", "Gimel.png", "Bet.png", "Nun.png", "Yud.png", "Hey.png"]
     },
     {
-        "image": "almond_Shin",
-        "letters": ["Shin","Kuf","Dalet"]
+        "image": "almond_Shin.jpg",
+        "letters": ["Shin.png", "Kuf.png", "Dalet.png"]
     },
     {
-        "image": "arnav_Alef",
-        "letters": ["Alef","Reish","Nun","Bet"]
+        "image": "arnav_Alef.jpg",
+        "letters": ["Alef.png", "Reish.png", "Nun.png", "Bet.png"]
     },
     {
-        "image": "lion_Alef",
-        "letters": ["Alef","Reish","Yud","Hey"]
+        "image": "avatiah_Alef.jpg",
+        "letters": ["Alef.png", "Bet.png", "Tet.png", "Yud.png", "Chet.png"]
     },
     {
-        "image": "lion_Alef",
-        "letters": ["Alef","Reish","Yud","Hey"]
+        "image": "ball_Kaf.jpg",
+        "letters": ["Kaf.png", "Dalet.png", "Vav.png", "Reish.png"]
+    },
+    {
+        "image": "banana_Bet .jpg",
+        "letters": ["Bet.png", "Nun.png", "Nun.png", "Hey.png"]
+    },
+    {
+        "image": "barbur_Bet.jpg",
+        "letters": ["Bet.png", "Reish.png", "Bet.png", "Vav.png", "Reish.png"]
+    },
+    {
+        "image": "bee_bet.jpg",
+        "letters": ["Dalet.png", "Bet.png", "Vav.png", "Reish.png", "Hey.png"]
+    },
+    {
+        "image": "bee_Dalet.jpg",
+        "letters": ["Dalet.png", "Bet.png", "Vav.png", "Reish.png", "Hey.png"]
+    },
+    {
+        "image": "boat_Samech.JPG",
+        "letters": ["Samech.png", "Yud.png", "Reish.png", "Hey.png"]
+    },
+    {
+        "image": "book_Samech.jpg",
+        "letters": ["Samech.png", "Pe.png", "Reish.png", "Yud.png", "Mem1.png"]
+    },
+    {
+        "image": "bread_Lamed.jpg",
+        "letters": ["Chet.png", "Lamed.png", "Hey.png"]
+    },
+    {
+        "image": "buterfly_Pe.jpg",
+        "letters": ["Pe.png", "Reish.png", "Pe.png", "Reish.png"]
+    },
+    {
+        "image": "car_Reish.jpg",
+        "letters": ["Alef.png", "Vav.png", "Tet.png", "Vav.png"]
+    },
+    {
+        "image": "cat_Chet.jpg",
+        "letters": ["Chet.png", "Taf.png", "Vav.png", "Lamed.png"]
+    },
+    {
+        "image": "chair_Kaf.jpg",
+        "letters": ["Kaf.png", "Yud.png", "Samech.png", "Alef.png"]
+    },
+    {
+        "image": "cheese_Gimel.jpg",
+        "letters": ["Gimel.png", "Bet.png", "Yud.png", "Nun.png", "Hey.png"]
+    },
+    {
+        "image": "chocolate_Shin.jpg",
+        "letters": ["Shin.png", "Vav.png", "Kuf.png", "Vav.png", "Lamed.png", "Dalet.png"]
+    },
+    {
+        "image": "cloun_Lamed.jpg",
+        "letters": ["Lamed.png", "Yud.png", "Zadik.png", "Nun1.png"]
+    },
+    {
+        "image": "cow_Pe.jpg",
+        "letters": ["Pe.png", "Reish.png", "Hey.png"]
+    },
+    {
+        "image": "djiraf_Gimel.jpg",
+        "letters": ["Gimel.png", "Reish.png", "Pe.png", "Hey.png"]
+    },
+    {
+        "image": "dog_Kaf.jpg",
+        "letters": ["Kaf.png", "Lamed.png", "Bet.png"]
+    },
+    {
+        "image": "dolfin_Dalet.jpg",
+        "letters": ["Dalet.png", "Vav.png", "Lamed.png", "Pe.png", "Yud.png", "Nun1.png"]
+    },
+    {
+        "image": "door_Dalet.jpg",
+        "letters": ["Dalet.png", "Lamed.png", "Taf.png"]
+    },
+    {
+        "image": "dov_Dalet.jpg",
+        "letters": ["Dalet.png", "Vav.png", "Bet.png"]
+    },
+    {
+        "image": "elefant_Pe.jpg",
+        "letters": ["Pe.png", "Yud.png", "Lamed.png"]
+    },
+    {
+        "image": "fireworks_Zain.jpg",
+        "letters": ["Zain.png", "Yud.png", "Kuf.png", "Vav.png", "Kuf.png", "Yud.png", "Mem1.png"]
+    },
+    {
+        "image": "Flower_Pe.jpg",
+        "letters": ["Vav.png", "Reish.png", "Dalet.png"]
+    },
+    {
+        "image": "fox_Shin.jpg",
+        "letters": ["Shin.png", "Vav.png", "Ayin.png", "Lamed.png"]
+    },
+    {
+        "image": "fox_Zain.jpg",
+        "letters": ["Shin.png", "Ayin.png", "Lamed.png"]
+    },
+    {
+        "image": "frog_Zadik.JPG",
+        "letters": ["Zadik.png", "Pe.png", "Reish.png", "Dalet.png", "Ayin.png"]
+    },
+    {
+        "image": "gezer_Gimel.jpg",
+        "letters": ["Gimel.png", "Zain.png", "Reish.png"]
+    },
+    {
+        "image": "gold_Zain.jpg",
+        "letters": ["Zain.png", "Hey.png", "Bet.png"]
+    },
+    {
+        "image": "Haluk_Chet.jpg",
+        "letters": ["Chet.png", "Lamed.png", "Vav.png", "Kuf.png"]
+    },
+    {
+        "image": "hamburger_Hey.jpg",
+        "letters": ["Hey.png", "Mem.png", "Bet.png", "Vav.png", "Reish.png", "Gimel.png", "Reish.png"]
+    },
+    {
+        "image": "Hamor_Chet.jpg",
+        "letters": ["Chet.png", "Mem.png", "Vav.png", "Reish.png"]
+    },
+    {
+        "image": "hands_Yud.JPG",
+        "letters": ["Yud.png", "Dalet.png", "Yud.png", "Yud.png", "Mem1.png"]
+    },
+    {
+        "image": "har_Hey.jpg",
+        "letters": ["Hey.png", "Reish.png"]
+    },
+    {
+        "image": "hatul_Chet.jpg",
+        "letters": ["Chet.png", "Taf.png", "Vav.png", "Lamed.png"]
+    },
+    {
+        "image": "Hazil_Chet.jpg",
+        "letters": ["Chet.png", "Zadik.png", "Yud.png", "Lamed.png"]
+    },
+    {
+        "image": "hipo_Hey.jpg",
+        "letters": ["Hey.png", "Yud.png", "Pe.png", "Vav.png", "Pe.png", "Vav.png", "Tet.png", "Mem1.png"]
+    },
+    {
+        "image": "horse_Samech.jpg",
+        "letters": ["Samech.png", "Vav.png", "Samech.png"]
+    },
+    {
+        "image": "howl_Yud.jpg",
+        "letters": ["Yud.png", "Nun.png", "Shin.png", "Vav.png", "Pe1.png"]
+    },
+    {
+        "image": "karnaf_Kuf.jpg",
+        "letters": ["Kuf.png", "Reish.png", "Nun.png", "Pe1.png"]
+    },
+    {
+        "image": "Kengeru_Kuf.JPG",
+        "letters": ["Kuf.png", "Nun.png", "Gimel.png", "Vav.png", "Reish.png", "Vav.png"]
+    },
+    {
+        "image": "keyboard_Mem.jpg",
+        "letters": ["Mem.png", "Yud.png", "Kuf.png", "Lamed.png", "Dalet.png", "Taf.png"]
+    },
+    {
+        "image": "key_Mem.jpg",
+        "letters": ["Mem.png", "Pe.png", "Taf.png", "Chet.png", "Vav.png", "Taf.png"]
+    },
+    {
+        "image": "Kipo_Kuf.jpg",
+        "letters": ["Kuf.png", "Yud.png", "Pe.png", "Vav.png", "Dalet.png"]
+    },
+    {
+        "image": "kiwi_Kuf.jpg",
+        "letters": ["Kuf.png", "Yud.png", "Vav.png", "Vav.png", "Yud.png"]
+    },
+    {
+        "image": "Klemantina_Kuf.jpg",
+        "letters": ["Kuf.png", "Lamed.png", "Mem.png", "Nun.png", "Tet.png", "Yud.png", "Nun.png", "Hey.png"]
+    },
+    {
+        "image": "kova_Kaf.jpg",
+        "letters": ["Kaf.png", "Vav.png", "Bet.png", "Ayin.png"]
+    },
+    {
+        "image": "lemon_Lamed.jpg",
+        "letters": ["Lamed.png", "Yud.png", "Mem.png","Vav.png", "Nun1.png"]
+    },
+    {
+        "image": "lev_Lamed.jpg",
+        "letters": ["Lamed.png", "Bet.png"]
+    },
+    {
+        "image": "lion_Alef.jpg",
+        "letters": ["Alef.png", "Reish.png", "Yud.png", "Hey.png"]
+    },
+    {
+        "image": "lizard_Lamed.jpg",
+        "letters": ["Lamed.png", "Tet.png", "Alef.png", "Hey.png"]
+    },
+    {
+        "image": "magafaim_Mem.jpg",
+        "letters": ["Mem.png", "Gimel.png", "Pe1.png"]
+    },
+    {
+        "image": "meduza_Mem.jpg",
+        "letters": ["Mem.png", "Dalet.png", "Vav.png", "Zain.png", "Hey.png"]
+    },
+    {
+        "image": "mish-mish_Mem.jpg",
+        "letters": ["Mem.png", "Yud.png", "Shin.png", "Mem.png", "Shin.png"]
+    },
+    {
+        "image": "monkey_Kuf.jpg",
+        "letters": ["Kuf.png", "Vav.png", "Pe1.png"]
+    },
+    {
+        "image": "moon_Yud.jpg",
+        "letters": ["Yud.png", "Reish.png", "Chet.png"]
+    },
+    {
+        "image": "nad_Nun.jpg",
+        "letters": ["Nun.png", "Dalet.png", "Nun.png", "Dalet.png", "Hey.png"]
+    },
+    {
+        "image": "nemalya_Nun.jpg",
+        "letters": ["Nun.png", "Mem.png", "Lamed.png", "Hey.png"]
+    },
+    {
+        "image": "Nevel_Nun.jpg",
+        "letters": ["Nun.png", "Bet.png", "Lamed.png"]
+    },
+    {
+        "image": "olive_Zait.jpg",
+        "letters": ["Zain.png", "Yud.png", "Taf.png", "Yud.png", "Mem1.png"]
+    },
+    {
+        "image": "peekok_Tet.jpg",
+        "letters": ["Tet.png", "Vav.png", "Vav.png", "Samech.png"]
+    },
+    {
+        "image": "perah_Pe.jpg",
+        "letters": ["Pe.png", "Reish.png", "Chet.png"]
+    },
+    {
+        "image": "Phone_Tet.jpg",
+        "letters": ["Tet.png", "Lamed.png", "Pe.png", "Vav.png", "Nun1.png"]
+    },
+    {
+        "image": "pilow_Kaf.jpg",
+        "letters": ["Kaf.png", "Reish.png", "Yud.png", "Taf.png"]
+    },
+    {
+        "image": "pilpel_Pe.jpg",
+        "letters": ["Pe.png", "Lamed.png", "Pe.png", "Lamed.png"]
+    },
+    {
+        "image": "racon_Reish.jpg",
+        "letters": ["Reish.png", "Alef.png", "Kuf.png", "Vav.png", "Nun1.png"]
+    },
+    {
+        "image": "raven_Ayin.jpg",
+        "letters": ["Ayin.png", "Vav.png", "Reish.png", "Bet.png"]
+    },
+    {
+        "image": "rimon_Reish.jpg",
+        "letters": ["Reish.png", "Yud.png", "Mem.png", "Vav.png", "Nun1.png"]
+    },
+    {
+        "image": "ring_Tet.jpg",
+        "letters": ["Tet.png", "Bet.png", "Ayin.png", "Taf.png"]
+    },
+    {
+        "image": "rooster_Taf.jpg",
+        "letters": ["Taf.png", "Reish.png", "Nun.png", "Gimel.png", "Vav.png", "Lamed.png"]
+    },
+    {
+        "image": "sal_Samech.jpg",
+        "letters": ["Samech.png", "Lamed.png"]
+    },
+    {
+        "image": "sea_Yud.jpg",
+        "letters": ["Yud.png", "Mem1.png"]
+    },
+    {
+        "image": "shablul_Shin.jpg",
+        "letters": ["Chet.png", "Yud.png", "Lamed.png", "Zain.png", "Vav.png", "Nun1.png"]
+    },
+    {
+        "image": "shezif_Shin.jpg",
+        "letters": ["Shin.png", "Zain.png", "Yud.png", "Pe1.png"]
+    },
+    {
+        "image": "Shoev_Shin.jpg",
+        "letters": ["Shin.png", "Vav.png", "Alef.png", "Bet.png"]
+    },
+    {
+        "image": "sir_Samech.jpg",
+        "letters": ["Samech.png", "Yud.png", "Reish.png"]
+    },
+    {
+        "image": "snake_Nun.jpg",
+        "letters": ["Nun.png", "Chet.png", "Shin.png"]
+    },
+    {
+        "image": "spoon_Kaf.jpg",
+        "letters": ["Kaf.png", "Pe.png", "Yud.png", "Taf.png"]
+    },
+    {
+        "image": "swine_Bet.jpg",
+        "letters": ["Bet.png", "Reish.png", "Bet.png", "Vav.png", "Reish.png"]
+    },
+    {
+        "image": "Tale_Tet.jpg",
+        "letters": ["Tet.png", "Lamed.png", "Hey.png"]
+    },
+    {
+        "image": "Talit_Tet.jpg",
+        "letters": ["Tet.png", "Lamed.png", "Yud.png", "Taf.png"]
+    },
+    {
+        "image": "tapuah_Taf.jpg",
+        "letters": ["Taf.png", "Pe.png", "Vav.png", "Chet.png"]
+    },
+    {
+        "image": "tapuz_Taf.jpg",
+        "letters": ["Taf.png", "Pe.png", "Vav.png", "Zain.png"]
+    },
+    {
+        "image": "tarnegol_Taf.jpg",
+        "letters": ["Taf.png", "Reish.png", "Nun.png", "Gimel.png", "Vav.png", "Lamed.png"]
+    },
+    {
+        "image": "Tavas_Tet.jpg",
+        "letters": ["Tet.png", "Vav.png", "Vav.png", "Samech.png"]
+    },
+    {
+        "image": "tiger_Nun.jpg",
+        "letters": ["Nun.png", "Mem.png", "Reish.png"]
+    },
+    {
+        "image": "trafic_Light_Reish.jpg",
+        "letters": ["Reish.png", "Mem.png", "Zain.png", "Vav.png", "Reish.png"]
+    },
+    {
+        "image": "train_Reish.jpg",
+        "letters": ["Reish.png", "Kaf.png", "Bet.png", "Taf.png"]
+    },
+    {
+        "image": "Trumpet_Chet.jpg",
+        "letters": ["Chet.png", "Zadik.png", "Vav.png", "Zadik.png", "Reish.png", "Hey.png"]
+    },
+    {
+        "image": "tuki_Taf.jpg",
+        "letters": ["Taf.png", "Vav.png", "Kaf.png", "Yud.png"]
+    },
+    {
+        "image": "Turtle_Zadik.jpg",
+        "letters": ["Zadik.png", "Bet.png"]
+    },
+    {
+        "image": "tzvi_Zadik.jpg",
+        "letters": ["Zadik.png", "Bet.png", "Yud.png"]
+    },
+    {
+        "image": "vafel_Vav.jpeg",
+        "letters": ["Vav.png", "Pe.png", "Lamed.png"]
+    },
+    {
+        "image": "vav_Vav.jpg",
+        "letters": ["Vav.png", "Vav.png"]
+    },
+    {
+        "image": "vilon_Vav.jpeg",
+        "letters": ["Vav.png", "Yud.png", "Lamed.png", "Vav.png", "Nun1.png"]
+    },
+    {
+        "image": "wombat_Vav.jpg",
+        "letters": ["Vav.png", "Mem.png", "Bet.png", "Tet.png"]
+    },
+    {
+        "image": "Yaen_Yud.jpg",
+        "letters": ["Yud.png", "Ayin.png", "Nun1.png"]
+    },
+    {
+        "image": "yarakot_Yud.jpg",
+        "letters": ["Yud.png", "Reish.png", "Kuf.png", "Vav.png", "Taf.png"]
+    },
+    {
+        "image": "zahal_Zain.jpg",
+        "letters": ["Zain.png", "Chet.png", "Lamed.png"]
+    },
+    {
+        "image": "Zdaf_Zadik.JPG",
+        "letters": ["Zadik.png", "Dalet.png", "Pe.png", "Yud.png", "Mem1.png"]
+    },
+    {
+        "image": "Zebra_Zain.jpg",
+        "letters": ["Zain.png", "Bet.png", "Reish.png", "Hey.png"]
+    },
+    {
+        "image": "ziporim_Zadik.jpg",
+        "letters": ["Zadik.png", "Yud.png", "Pe.png", "Vav.png", "Reish.png"]
+    },
+    {
+        "image": "zvi_Zadik.jpg",
+        "letters": ["Zadik.png", "Bet.png", "Yud.png"]
     }
-
 ]
