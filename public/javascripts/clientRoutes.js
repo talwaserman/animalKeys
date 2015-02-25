@@ -25,4 +25,10 @@ mainApp.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvide
             controller: 'firstLetterCTR'
         })
 
+        .state('knowTheLetters', {
+            url:'/knowTheLetters',
+            templateUrl : '/views/knowTheLetters.html',
+            controller: 'knowTheLettersCTR'
+        })
+
 }]);

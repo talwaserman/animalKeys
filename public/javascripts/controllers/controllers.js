@@ -155,6 +155,33 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
     });
 }]);
 
+mainApp.controller('knowTheLettersCTR',['$scope','$location', function($scope, $location) {
+    $(function(){
+
+        $('.keyboard li').click(function(event){
+
+            if(event.target.className !== "space")
+            {
+                if($('.enlargedLatter img').length > 0)
+                {
+                    $('.enlargedLatter img').remove();
+                }
+                if(event.target.src)
+                {
+                    var arr = event.target.src.split("/");
+                }
+                var imageLocation =  "images/letters/"+arr[arr.length-1];
+                var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
+                $('.enlargedLatter').append(div);
+
+                var snd = new Audio("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
+                snd.play();
+            }
+
+        });
+
+    });
+}]);
 mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $location) {
     $(function(){
 
@@ -298,4 +325,5 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
 
     });
 }]);
+
 
