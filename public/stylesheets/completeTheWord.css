@@ -219,7 +219,9 @@ textarea{
 .gameTitle{
     display: inherit;
     width: 500px;
-    margin-left: 78px;
+}
+.gameTitle img{
+    margin-left: 6em;
 }
 
 .image.backIcon{

@@ -25,7 +25,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
 
 
 
-        $('.keyboard li').click(function(event){
+        $('.keyboard li').on('tap',(function(event){
 
             if(event.target.className.split(" ")[0] === "space")
             {
@@ -96,56 +96,10 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
                 }
             }
             else{
-                /*var snd = new Audio("./sounds/wrong.wav");
-                snd.play();*/
 
             }
 
-            // Shift keys
-            if ($this.hasClass('left-shift') || $this.hasClass('right-shift')) {
-                $('.letter').toggleClass('uppercase');
-                $('.symbol span').toggle();
-
-                shift = (shift === true) ? false : true;
-                capslock = false;
-                return false;
-            }
-
-            // Caps lock
-            if ($this.hasClass('capslock')) {
-                $('.letter').toggleClass('uppercase');
-                capslock = true;
-                return false;
-            }
-
-            // Delete
-            if ($this.hasClass('delete')) {
-                var html = $write.html();
-
-                $write.html(html.substr(0, html.length - 1));
-                return false;
-            }
-
-            // Special characters
-            if ($this.hasClass('symbol')) character = $('span:visible', $this).html();
-            if ($this.hasClass('space')) character = ' ';
-            if ($this.hasClass('tab')) character = "\t";
-            if ($this.hasClass('return')) character = "\n";
-
-            // Uppercase letter
-            if ($this.hasClass('uppercase')) character = character.toUpperCase();
-
-            // Remove shift once a key is clicked.
-            if (shift === true) {
-                $('.symbol span').toggle();
-                if (capslock === false) $('.letter').toggleClass('uppercase');
-
-                shift = false;
-            }
-
-            // Add the character
-            $write.html($write.html() + character);
-        });
+        }));
 
 
         function _getRandomImage(){
@@ -158,7 +112,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
 mainApp.controller('knowTheLettersCTR',['$scope','$location', function($scope, $location) {
     $(function(){
 
-        $('.keyboard li').click(function(event){
+        $('.keyboard li').on('tap',(function(event){
 
             if(event.target.className !== "space")
             {
@@ -178,7 +132,7 @@ mainApp.controller('knowTheLettersCTR',['$scope','$location', function($scope, $
                 snd.play();
             }
 
-        });
+        }));
 
     });
 }]);
@@ -194,7 +148,7 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
             shift = false,
             capslock = false;
 
-        $('.keyboard li').click(function(event){
+        $('.keyboard li').on('tap',(function(event){
 
             if(event.target.className.split(" ")[0] === "space")
             {
@@ -316,7 +270,7 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
 
             // Add the character
             $write.html($write.html() + character);
-        });
+        }));
 
 
         function _getRandomImage(){
