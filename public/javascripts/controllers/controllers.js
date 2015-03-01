@@ -4,24 +4,16 @@
 mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function($scope, $location, $http) {
     $(function(){
 
-        var imageIndex = 0;
-        $scope.wordsArr = [], wordEntered = [];
-        var imageList;
+        var imageIndex = 0, wordEntered = [], allWords, imageList;
+        $scope.wordsArr = [];
+
         $.get(location.origin+"/animalList", function( data ) {
             imageList = data.images.split(',');
         });
 
-        /*var allWords;
         $http.get('javascripts/controllers/words.json').success(function(data) {
             allWords = data;
-            //build the initial words;
-            var i;
-            for(i=0;i<allWords[0].letters.length;i++)
-            {
-                var div = $('<div class="completeLetter"></div>');
-                $('.completeWord').append(div);
-            }
-        });*/
+        });
 
         $('.keyboard li').on('tap',(function(event){
 
@@ -66,13 +58,45 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
             }
             else{
 
-                var length = event.target.src.split("/").length;
-                var letter = event.target.src.split("/")[length-1];
 
+                //Letter pressed
+
+                var tempArr,image, tempObject ,length, letter;
+
+                length = event.target.src.split("/").length;
+                letter = event.target.src.split("/")[length-1];
+
+                //Update word on screen
                 var imageLocation =  "images/letters/"+letter;
                 var div = $('<img src="'+imageLocation+'" style="float:right;width:60px;height:60px">');
                 $('.completeWord').append(div);
+
                 wordEntered.push(letter);
+
+                //Get image name;
+                var image = $('.animaleImage img')[0].src.split('/');
+                image = image[image.length-1];
+
+                tempObject = {
+                    "image": image,
+                    "letters": wordEntered
+                };
+
+                if(_checkWord(tempObject))
+                {
+                    var snd = new Audio("./sounds/success.wav");
+                    snd.play();
+                    $('.completeWord').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
+                    var score = parseInt($('.smallBox.scoreNumber h1').text());
+                    $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
+                    score += 1;
+                    $('.smallBox.scoreNumber').css( "color", "green");
+                    $('.smallBox.scoreNumber h1').text(score);
+                    setTimeout(function(){
+                        $('.smallBox.scoreNumber').css( "color", "black");
+
+                    },4000)
+                }
             }
         }));
 
@@ -80,6 +104,31 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
         function _getRandomImage(){
             return Math.floor(Math.random()*imageList.length)+1;
         }
+
+        function _checkWord(array) {
+            var bool;
+            for (var i = 0;i<allWords.length  ;i++) {
+                if(allWords[i].image === array.image)
+                {
+                    bool = true;
+                    for(var j = 0;j<allWords[i].letters.length ;j++)
+                    {
+                        if(allWords[i].letters[j] !== array.letters[j])
+                            bool = false;
+                    }
+                    if(bool)
+                        return bool;
+
+
+                    else
+                        bool = false;
+                }
+            }
+            return false;
+        }
+
+
+
     });
 }]);
 
@@ -118,9 +167,6 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
             imageList = data.images.split(',');
         });
 
-        var $write = $('#write'),
-            shift = false,
-            capslock = false;
 
         $('.keyboard li').on('tap',(function(event){
 
