@@ -14,7 +14,11 @@ body {
     float: right;
     position: absolute;
     top: 105px;
-    right: 26px;
+    right: 6%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 11px;
+    border: 1px solid black;
 }
 .completeWord .completeLetter{
 
@@ -81,27 +85,6 @@ body {
 }
 .keyboard li:active{
     cursor: pointer;
-}
-.capslock, .tab, .left-shift {
-    clear: left;
-}
-.keyboard .tab, #keyboard .delete {
-    width: 70px;
-}
-.keyboard .capslock {
-    width: 80px;
-}
-.keyboard .return {
-    width: 77px;
-}
-.keyboard .left-shift {
-    width: 95px;
-}
-.keyboard .right-shift {
-    width: 109px;
-}
-.lastitem {
-    margin-right: 0;
 }
 .uppercase {
     text-transform: uppercase;

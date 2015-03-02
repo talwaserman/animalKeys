@@ -1,7 +1,7 @@
 /**
  * Created by talwa_000 on 21/02/15.
  */
-mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function($scope, $location, $http) {
+mainApp.controller('completeTheWordCTR',['$scope','$http','sounds', function($scope, $http, sounds) {
     $(function(){
 
         var imageIndex = 0, wordEntered = [], allWords, imageList;
@@ -19,6 +19,8 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
 
             if(event.target.className.split(" ")[0] === "space")
             {
+                sounds.swipe();
+
                 if($('.animaleImage img').length > 0)
                 {
                     $('.animaleImage img').remove();
@@ -57,13 +59,11 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
                 wordEntered = [];
             }
             else{
-
-
                 //Letter pressed
+                sounds.letter("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
 
-                var tempArr,image, tempObject ,length, letter;
-
-                length = event.target.src.split("/").length;
+                var tempObject ,
+                length = event.target.src.split("/").length,
                 letter = event.target.src.split("/")[length-1];
 
                 //Update word on screen
@@ -84,8 +84,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
 
                 if(_checkWord(tempObject))
                 {
-                    var snd = new Audio("./sounds/success.wav");
-                    snd.play();
+                    sounds.success();
                     $('.completeWord').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
                     var score = parseInt($('.smallBox.scoreNumber h1').text());
                     $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
@@ -118,25 +117,21 @@ mainApp.controller('completeTheWordCTR',['$scope','$location','$http', function(
                     }
                     if(bool)
                         return bool;
-
-
                     else
                         bool = false;
                 }
             }
             return false;
         }
-
-
-
     });
 }]);
 
-mainApp.controller('knowTheLettersCTR',['$scope','$location', function($scope, $location) {
+mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, sounds) {
     $(function(){
 
         $('.keyboard li').on('tap',(function(event){
 
+            debugger;
             if(event.target.className !== "space")
             {
                 if($('.enlargedLatter img').length > 0)
@@ -151,15 +146,15 @@ mainApp.controller('knowTheLettersCTR',['$scope','$location', function($scope, $
                 var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
                 $('.enlargedLatter').append(div);
 
-                var snd = new Audio("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
-                snd.play();
+                sounds.letter("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
+
             }
 
         }));
 
     });
 }]);
-mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $location) {
+mainApp.controller('firstLetterCTR',['$scope', 'sounds', function($scope, sounds) {
     $(function(){
 
         var imageList;
@@ -170,30 +165,26 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
 
         $('.keyboard li').on('tap',(function(event){
 
+            $scope.val = '1';
+
             if(event.target.className.split(" ")[0] === "space")
             {
-
                 if($('.animaleImage img').length > 0)
                 {
                     $('.animaleImage img').remove();
-
                     var newimage = $('<img />').attr({
                         src: "/images/animales/"+imageList[_getRandomImage()]
                     }).css({
                             width:448,
                             height:285
                         });
-
                     $('.animaleImage').append(newimage);
-
-                    var snd = new Audio("./sounds/swipe.mp3");
-                    snd.play();
+                    sounds.swipe();
 
                 }
             }
             else{
-                var snd = new Audio("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
-                snd.play();
+                sounds.letter("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
             }
 
             if(event.target.className !== "space")
@@ -220,9 +211,8 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
             if(letter === letterFromImage )
             {
 
+                sounds.success();
 
-                var snd = new Audio("./sounds/success.wav");
-                snd.play();
                 var score = parseInt($('.smallBox.scoreNumber h1').text());
                 $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
                 score += 1;
@@ -242,9 +232,7 @@ mainApp.controller('firstLetterCTR',['$scope','$location', function($scope, $loc
             }
 
             else if(event.target.className !== "space"){
-                var snd = new Audio("./sounds/wrong.wav");
-                snd.play();
-
+                sounds.wrong();
             }
 
 
