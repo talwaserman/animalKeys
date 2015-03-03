@@ -129,7 +129,6 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds', function($sc
         }
     });
 }]);
-
 mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, sounds) {
     $(function(){
 
@@ -161,6 +160,7 @@ mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, soun
 mainApp.controller('firstLetterCTR',['$scope', 'sounds', function($scope, sounds) {
     $(function(){
 
+        $scope.val = 0;
         var imageList;
         $.get(location.origin+"/animalList", function( data ) {
             imageList = data.images.split(',');
@@ -168,8 +168,6 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds', function($scope, sounds
 
 
         $('.keyboard li').on('tap',(function(event){
-
-            $scope.val = "1";
 
             if(event.target.className.split(" ")[0] === "space")
             {
@@ -214,12 +212,12 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds', function($scope, sounds
             var letter = imageLocation.split('/')[2].split('.')[0];
             if(letter === letterFromImage )
             {
-
+                debugger;
                 sounds.success();
-
-                var score = parseInt($('.smallBox.scoreNumber h1').text());
+                $scope.val = parseInt($scope.val) +1;
+                /*var score = parseInt($('.smallBox.scoreNumber h1').text());*/
                 $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-                score += 1;
+                /*score += 1;*/
                 $('.smallBox.scoreNumber').css( "color", "green");
                 $('.smallBox.scoreNumber h1').text(score);
                 setTimeout(function(){
