@@ -48,6 +48,9 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds', function($sc
                     $('.completeWord img')[$('.completeWord img').length-1].remove();
                     wordEntered.pop();
                 }
+                if($('.completeWord img').length === 0){
+                    $('.completeWord').removeClass('completeWordContainer');
+                }
 
             }
             else if(event.target.className.split(" ")[0] === "enter"){
@@ -60,6 +63,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds', function($sc
             }
             else{
                 //Letter pressed
+                $('.completeWord').addClass('completeWordContainer');
                 sounds.letter("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
 
                 var tempObject ,
@@ -165,7 +169,7 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds', function($scope, sounds
 
         $('.keyboard li').on('tap',(function(event){
 
-            $scope.val = '1';
+            $scope.val = "1";
 
             if(event.target.className.split(" ")[0] === "space")
             {

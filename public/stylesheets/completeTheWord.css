@@ -15,11 +15,16 @@ body {
     position: absolute;
     top: 105px;
     right: 6%;
-    background-color: white;
     padding: 10px;
+
+}
+
+.completeWordContainer{
     border-radius: 11px;
     border: 1px solid black;
+    background-color: white;
 }
+
 .completeWord .completeLetter{
 
     background: yellow;
