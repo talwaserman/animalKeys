@@ -156,60 +156,63 @@ mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, soun
             div.src = imageLocation;
             div.style.width = "448px" ;
             div.style.height = "285px" ;
-
             document.getElementsByClassName('enlargedLatter')[0].appendChild(div);
             /*sounds.letter("./voice/"+letter.split('.')[0]+".mp3");*/
         }
     }//keyPressed()
 }]);
 mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope, sounds, util) {
+    var newimage, imageList, div;
     $scope.val = 0;
 
     $scope.keyPressed = function(letter){
 
-        var imageList = util.getImageList();
+        imageList = util.getImageList();
 
         if(letter === 'space')
         {
-            if($('.animaleImage img').length > 0)
+            if(document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img").length > 0)
             {
-                $('.animaleImage img').remove();
-                var newimage = $('<img />').attr({
-                    src: "/images/animales/"+imageList[util.getRandomNumber()]
-                }).css({
-                        width:448,
-                        height:285
-                    });
-                $('.animaleImage').append(newimage);
+                document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img")[0].remove();
+
+                newimage = document.createElement("img");
+                newimage.src = "/images/animales/"+imageList[util.getRandomNumber()];
+                newimage.style.width = "448px" ;
+                newimage.style.height = "285px" ;
+                document.getElementsByClassName('animaleImage')[0].appendChild(newimage);
                 sounds.swipe();
             }
         }
         else if(letter !== 'backSpace'){
             /*sounds.letter("./voice/"+letter.split('.')[0]+".mp3");*/
 
-            if($('.enlargedLatter img').length > 0)
-                $('.enlargedLatter img').remove();
+            if(document.getElementsByClassName('enlargedLatter')[0].getElementsByTagName("img").length > 0)
+                document.getElementsByClassName('enlargedLatter')[0].getElementsByTagName("img")[0].remove();
 
             var imageLocation =  "images/letters/"+letter;
-            var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
-            $('.enlargedLatter').append(div);
+            div = document.createElement("img");
+            div.src = imageLocation;
+            div.style.width = "448px" ;
+            div.style.height = "285px" ;
+            document.getElementsByClassName('enlargedLatter')[0].appendChild(div);
 
             if(_compareIMageAndLetter())
             {
                 sounds.success();
                 $scope.val = parseInt($scope.val) +1;
-                $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
+                /*$('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
                 $('.smallBox.scoreNumber').css( "color", "green");
 
                 setTimeout(function(){
                     $('.smallBox.scoreNumber').css( "color", "black");
 
-                },4000)
+                },4000)*/
+
                 //clear enlarged letter
-                if($('.enlargedLatter img').length > 0)
+                /*if($('.enlargedLatter img').length > 0)
                 {
                     $('.enlargedLatter img').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-                }
+                }*/
             }
             else {
                 sounds.wrong();
@@ -217,7 +220,7 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope,
         }//else
 
         function _compareIMageAndLetter(){
-            var tempArr = $('.animaleImage img')[0].src.split('/'),
+            var tempArr = document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img")[0].src.split('/'),
                 imageName = tempArr[tempArr.length-1],
                 letterFromImage = imageName.split('_')[1].split('.')[0],
                 letter = imageLocation.split('/')[2].split('.')[0];
