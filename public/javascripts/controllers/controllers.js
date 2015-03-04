@@ -130,126 +130,88 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds', function($sc
     });
 }]);
 mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, sounds) {
-    $(function(){
-
-        $('.keyboard li').on('tap',(function(event){
-
-            debugger;
-            if(event.target.className !== "space")
+    $scope.keyPressed = function(letter){
+        if(letter !== 'space')
+        {
+            if($('.enlargedLatter img').length > 0)
             {
-                if($('.enlargedLatter img').length > 0)
-                {
-                    $('.enlargedLatter img').remove();
-                }
-                if(event.target.src)
-                {
-                    var arr = event.target.src.split("/");
-                }
-                var imageLocation =  "images/letters/"+arr[arr.length-1];
-                var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
-                $('.enlargedLatter').append(div);
-
-                sounds.letter("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
-
+                $('.enlargedLatter img').remove();
             }
-
-        }));
-
-    });
+            var imageLocation =  "images/letters/"+letter;
+            var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
+            $('.enlargedLatter').append(div);
+            sounds.letter("./voice/"+letter.split('.')[0]+".mp3");
+        }
+    }//keyPressed()
 }]);
 mainApp.controller('firstLetterCTR',['$scope', 'sounds', function($scope, sounds) {
     $scope.val = 0;
+
+    var imageList;
+    $.get(location.origin+"/animalList", function( data ) {
+        imageList = data.images.split(',');
+    });
+
     $scope.keyPressed = function(letter){
-        alert("key pressed: "+letter);
-    }
-    $(function(){
-
-
-        var imageList;
-        $.get(location.origin+"/animalList", function( data ) {
-            imageList = data.images.split(',');
-        });
-
-
-        $('.keyboard li').on('tap',(function(event){
-
-            if(event.target.className.split(" ")[0] === "space")
+        if(letter === 'space')
+        {
+            if($('.animaleImage img').length > 0)
             {
-                if($('.animaleImage img').length > 0)
-                {
-                    $('.animaleImage img').remove();
-                    var newimage = $('<img />').attr({
-                        src: "/images/animales/"+imageList[_getRandomImage()]
-                    }).css({
-                            width:448,
-                            height:285
-                        });
-                    $('.animaleImage').append(newimage);
-                    sounds.swipe();
-
-                }
+                $('.animaleImage img').remove();
+                var newimage = $('<img />').attr({
+                    src: "/images/animales/"+imageList[_getRandomImage()]
+                }).css({
+                        width:448,
+                        height:285
+                    });
+                $('.animaleImage').append(newimage);
+                sounds.swipe();
             }
-            else{
-                sounds.letter("./voice/"+event.target.src.split('/')[5].split('.')[0]+".mp3");
-            }
+        }
+        else{
+            sounds.letter("./voice/"+letter.split('.')[0]+".mp3");
 
-            if(event.target.className !== "space")
-            {
-                if($('.enlargedLatter img').length > 0)
-                {
-                    $('.enlargedLatter img').remove();
-                }
-                if(event.target.src)
-                {
-                    var arr = event.target.src.split("/");
-                }
-                var imageLocation =  "images/letters/"+arr[arr.length-1];
-                var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
-                $('.enlargedLatter').append(div);
+            if($('.enlargedLatter img').length > 0)
+                $('.enlargedLatter img').remove();
 
-            }
-            if(_compareIMageAndLetter)
+            var imageLocation =  "images/letters/"+letter;
+            var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
+            $('.enlargedLatter').append(div);
+
+            if(_compareIMageAndLetter())
             {
                 sounds.success();
                 $scope.val = parseInt($scope.val) +1;
-                /*var score = parseInt($('.smallBox.scoreNumber h1').text());*/
                 $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-                /*score += 1;*/
                 $('.smallBox.scoreNumber').css( "color", "green");
-                $('.smallBox.scoreNumber h1').text(score);
+
                 setTimeout(function(){
                     $('.smallBox.scoreNumber').css( "color", "black");
 
                 },4000)
-
                 //clear enlarged letter
                 if($('.enlargedLatter img').length > 0)
                 {
                     $('.enlargedLatter img').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-
                 }
             }
-
-            else if(event.target.className !== "space"){
+            else {
                 sounds.wrong();
-            }
-
-
-        }));
-
+            }//else
+        }//else
 
         function _getRandomImage(){
             return Math.floor(Math.random()*imageList.length)+1;
         }
         function _compareIMageAndLetter(){
             var tempArr = $('.animaleImage img')[0].src.split('/'),
-            imageName = tempArr[tempArr.length-1],
-            letterFromImage = imageName.split('_')[1].split('.')[0],
-            letter = imageLocation.split('/')[2].split('.')[0];
-                return (letter === letterFromImage )
+                imageName = tempArr[tempArr.length-1],
+                letterFromImage = imageName.split('_')[1].split('.')[0],
+                letter = imageLocation.split('/')[2].split('.')[0];
+            return (letter === letterFromImage )
         }
+    }//keyPressed()
 
-    });
 }]);
 
 
