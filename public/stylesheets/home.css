@@ -6,8 +6,8 @@ body{
 .cloud {
     cursor: pointer;
 }
-.cloud img:active{
-
+.cloud img{
+    width: 90%;
 }
 
 .sapLogo{
