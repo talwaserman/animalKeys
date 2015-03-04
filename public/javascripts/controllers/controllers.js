@@ -144,20 +144,21 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
 }]);
 mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, sounds) {
     $scope.keyPressed = function(letter){
+        var imageLocation, div;
         if(letter !== 'space' && letter !== 'backSpace')
         {
             if(document.getElementsByClassName('enlargedLatter')[0].getElementsByTagName("img").length > 0)
             {
                 document.getElementsByClassName('enlargedLatter')[0].getElementsByTagName("img")[0].remove();
             }
-            var imageLocation =  "images/letters/"+letter;
-            var div = document.createElement("img");
+            imageLocation =  "images/letters/"+letter;
+            div = document.createElement("img");
             div.src = imageLocation;
             div.style.width = "448px" ;
             div.style.height = "285px" ;
 
             document.getElementsByClassName('enlargedLatter')[0].appendChild(div);
-            sounds.letter("./voice/"+letter.split('.')[0]+".mp3");
+            /*sounds.letter("./voice/"+letter.split('.')[0]+".mp3");*/
         }
     }//keyPressed()
 }]);

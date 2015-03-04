@@ -21,7 +21,6 @@ angular.module('mainApp').factory('sounds',['$state' ,function($state){
         letter: function(letter_voice_file){
             letter_snd = new Audio(letter_voice_file);
             letter_snd.play();
-
         }
     };
 }]);
