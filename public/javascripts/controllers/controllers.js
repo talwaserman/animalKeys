@@ -158,9 +158,13 @@ mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, soun
     });
 }]);
 mainApp.controller('firstLetterCTR',['$scope', 'sounds', function($scope, sounds) {
+    $scope.val = 0;
+    $scope.keyPressed = function(letter){
+        alert("key pressed: "+letter);
+    }
     $(function(){
 
-        $scope.val = 0;
+
         var imageList;
         $.get(location.origin+"/animalList", function( data ) {
             imageList = data.images.split(',');
@@ -204,15 +208,8 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds', function($scope, sounds
                 $('.enlargedLatter').append(div);
 
             }
-
-            //compare image and letter
-            var tempArr = $('.animaleImage img')[0].src.split('/');
-            var imageName = tempArr[tempArr.length-1];
-            var letterFromImage = imageName.split('_')[1].split('.')[0];
-            var letter = imageLocation.split('/')[2].split('.')[0];
-            if(letter === letterFromImage )
+            if(_compareIMageAndLetter)
             {
-                debugger;
                 sounds.success();
                 $scope.val = parseInt($scope.val) +1;
                 /*var score = parseInt($('.smallBox.scoreNumber h1').text());*/
@@ -243,6 +240,13 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds', function($scope, sounds
 
         function _getRandomImage(){
             return Math.floor(Math.random()*imageList.length)+1;
+        }
+        function _compareIMageAndLetter(){
+            var tempArr = $('.animaleImage img')[0].src.split('/'),
+            imageName = tempArr[tempArr.length-1],
+            letterFromImage = imageName.split('_')[1].split('.')[0],
+            letter = imageLocation.split('/')[2].split('.')[0];
+                return (letter === letterFromImage )
         }
 
     });
