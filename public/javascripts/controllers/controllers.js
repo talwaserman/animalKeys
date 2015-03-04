@@ -154,8 +154,8 @@ mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, soun
             imageLocation =  "images/letters/"+letter;
             div = document.createElement("img");
             div.src = imageLocation;
-            div.style.width = "448px" ;
-            div.style.height = "285px" ;
+            div.style.width = "200px" ;
+            div.style.height = "200px" ;
             document.getElementsByClassName('enlargedLatter')[0].appendChild(div);
             /*sounds.letter("./voice/"+letter.split('.')[0]+".mp3");*/
         }

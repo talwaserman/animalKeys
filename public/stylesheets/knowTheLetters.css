@@ -185,7 +185,6 @@ body{
         margin: 100px auto;
         /*width: 1023px;*/
         position: absolute;
-        top: 315px;
         left: -9px;
         margin-bottom: 5px;
     }
@@ -199,7 +198,7 @@ body{
         left: 22px;
     }
     #container {
-        margin: 100px auto;
+        margin: 50px auto;
         width: 1023px;
         position: absolute;
         top: 356px;
