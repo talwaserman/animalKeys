@@ -185,7 +185,7 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope,
             }
         }
         else if(letter !== 'backSpace'){
-            sounds.letter("./voice/"+letter.split('.')[0]+".mp3");
+            /*sounds.letter("./voice/"+letter.split('.')[0]+".mp3");*/
 
             if($('.enlargedLatter img').length > 0)
                 $('.enlargedLatter img').remove();
