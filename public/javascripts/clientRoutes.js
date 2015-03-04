@@ -1,7 +1,7 @@
 /**
  * Created by talwa_000 on 21/02/15.
  */
-var mainApp = angular.module('mainApp', ['ui.router','ngAnimate']);
+var mainApp = angular.module('mainApp', ['ui.router','ngTouch']);
 
 // configure our routes
 mainApp.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider, $stateProvider) {
