@@ -1,11 +1,5 @@
 #Online KeyBoard to learn the Alefh Bet.
 
-<a href="https://raw.githubusercontent.com/tal1234l/animalKeys/master/public/images/sap_image.png" target="_blank">
-    <img src="https://raw.githubusercontent.com/tal1234l/animalKeys/master/public/images/sap_image.png" alt="alt tag" style="max-width: 30%;">
-</a>
-
-![alt tag](https://raw.githubusercontent.com/tal1234l/animalKeys/master/public/images/Izzy_Shapira_Logo_BG.png)
-
 Currently working demo is located here: https://animalkeys.herokuapp.com/#/
 
 This is a Volunteer project for kids to learn the Hebrew ABC and was part of SAP contribution to Beit Issie Shapiro institute
