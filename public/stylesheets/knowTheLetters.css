@@ -184,9 +184,9 @@ body{
     #container {
         margin: 50px auto;
         /*width: 1023px;*/
-        position: absolute;
-        left: -9px;
-        margin-bottom: 5px;
+        /*position: absolute;
+        left: -9px;*/
+       /* margin-bottom: 5px;*/
     }
 }
 
@@ -200,10 +200,10 @@ body{
     #container {
         margin: 50px auto;
         width: 1023px;
-        position: absolute;
+        /*position: absolute;*/
         top: 356px;
-        left: -9px;
-        margin-bottom: 5px;
+        /*left: -9px;*/
+        /*margin-bottom: 5px;*/
     }
 }
 
