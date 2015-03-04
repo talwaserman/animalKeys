@@ -4,6 +4,10 @@
         "letters": ["Alef.png", "Pe.png", "Reish.png", "Samech.png", "Kuf.png"]
     },
     {
+        "image": "tut_Taf.jpg",
+        "letters": ["Taf.png", "Vav.png", "Taf.png"]
+    },
+    {
         "image": "agas_Alef.jpg",
         "letters": ["Alef.png", "Gimel.png", "Samech.png"]
     },
