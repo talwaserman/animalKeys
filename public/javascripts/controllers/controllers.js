@@ -146,13 +146,17 @@ mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, soun
     $scope.keyPressed = function(letter){
         if(letter !== 'space' && letter !== 'backSpace')
         {
-            if($('.enlargedLatter img').length > 0)
+            if(document.getElementsByClassName('enlargedLatter')[0].getElementsByTagName("img").length > 0)
             {
-                $('.enlargedLatter img').remove();
+                document.getElementsByClassName('enlargedLatter')[0].getElementsByTagName("img")[0].remove();
             }
             var imageLocation =  "images/letters/"+letter;
-            var div = $('<img src="'+imageLocation+'" style="width:448px;height:285px">');
-            $('.enlargedLatter').append(div);
+            var div = document.createElement("img");
+            div.src = imageLocation;
+            div.style.width = "448px" ;
+            div.style.height = "285px" ;
+
+            document.getElementsByClassName('enlargedLatter')[0].appendChild(div);
             sounds.letter("./voice/"+letter.split('.')[0]+".mp3");
         }
     }//keyPressed()
