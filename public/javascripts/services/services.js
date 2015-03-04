@@ -26,39 +26,30 @@ angular.module('mainApp').factory('sounds',['$state' ,function($state){
     };
 }]);
 
-angular.module('mainApp').factory('score',['$state' ,function($state){
 
-    var myscore=0;
+angular.module('mainApp').factory('util',['$http', function util($http){
+    var allWords, imageList;
+
+    $http.get('javascripts/controllers/words.json').success(function(data) {
+        allWords = data;
+    });
+
+    $http.get(location.origin+"/animalList").success(function(data) {
+        imageList = data.images.split(',');
+    });
 
     return {
-        addPoints: function(){
-            myscore++;
-            /*var score = parseInt($('.smallBox.scoreNumber h1').text());
-            $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-            score += 1;
-            $('.smallBox.scoreNumber').css( "color", "green");
-            $('.smallBox.scoreNumber h1').text(score);
-            setTimeout(function(){
-                $('.smallBox.scoreNumber').css( "color", "black");
-
-            },4000)*/
+        getAllWords: function(){
+            return allWords;
+        },
+        getImageList: function(){
+            return imageList;
+        },
+        getRandomNumber: function(){
+            return Math.floor(Math.random()*imageList.length)+1;
         }
 
-    };
-}]);
 
-angular.module('mainApp').service('auth',['$http','API_URL','authToken','$state', function auth($http,API_URL,authToken,$state){
-    function authSuccessful(res){
-        authToken.setToken(res.token);
-        $state.go('home');
-    };
-    this.login = function(email,password){
-        return $http.post(API_URL + '/loginUser', {name: email, password: password})
-            .success(authSuccessful);
-    };
-    this.register = function(email,password){
-        return $http.post(API_URL + '/registerUser', {name: email, password: password})
-            .success(authSuccessful);
+    }
 
-    };
 }]);
