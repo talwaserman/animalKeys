@@ -30,6 +30,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
                 }
                 imageIndex++;
                 wordEntered = [];
+                _cleanContainer();
             break;
 
             case "backSpace":
@@ -39,9 +40,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
                     wordEntered.pop();
                 }
                 if($('.completeWord img').length === 0){
-                    $('.completeWord').removeClass('completeWordContainer');
-                    $('.completeWord').removeClass('green');
-                    $('.completeWord').removeClass('red');
+                    _cleanContainer();
                 }
                 else
                 {
@@ -135,6 +134,11 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
                 }
             }
             return false;
+        }
+        function _cleanContainer(){
+            $('.completeWord').removeClass('completeWordContainer');
+            $('.completeWord').removeClass('green');
+            $('.completeWord').removeClass('red');
         }
     } //keyPress
 }]);
