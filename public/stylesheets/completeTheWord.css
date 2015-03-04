@@ -38,6 +38,14 @@ body {
     display: inline-block;
 }
 
+.green{
+    background-color: lightgreen;
+}
+
+.red{
+    background-color: indianred;
+}
+
 #write {
     margin: 0 0 5px;
     padding: 5px;
