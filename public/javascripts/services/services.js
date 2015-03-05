@@ -46,7 +46,49 @@ angular.module('mainApp').factory('util',['$http', function util($http){
         },
         getRandomNumber: function(){
             return Math.floor(Math.random()*imageList.length)+1;
+        },
+        changeImage: function(){
+            var newimage;
+            if(document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img").length > 0)
+            {
+                document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img")[0].remove();
+
+                newimage = document.createElement("img");
+                newimage.src = "/images/animales/"+imageList[this.getRandomNumber()];
+                newimage.style.width = "448px" ;
+                newimage.style.height = "285px" ;
+                document.getElementsByClassName('animaleImage')[0].appendChild(newimage);
+            }
+        },
+        fadeInOut: function(){
+            document.getElementsByClassName('scoreNumber')[0].style.color = "green";
+            setTimeout(function(){
+                document.getElementsByClassName('scoreNumber')[0].style.color = "black";
+            },500)
+            setTimeout(function(){
+                document.getElementsByClassName('scoreNumber')[0].style.color = "green";
+            },1000)
+            setTimeout(function(){
+                document.getElementsByClassName('scoreNumber')[0].style.color = "black";
+            },1500)
+        },
+        fadeInOutCompleteWord: function(){
+            debugger;
+            document.getElementsByClassName('completeWord ')[0].style.background  = "green";
+            setTimeout(function(){
+                document.getElementsByClassName('completeWord ')[0].style.background  = "white";
+            },500)
+            setTimeout(function(){
+                document.getElementsByClassName('completeWord ')[0].style.background  = "green";
+            },1000)
+            setTimeout(function(){
+                document.getElementsByClassName('completeWord ')[0].style.background  = "white";
+            },1500)
+            setTimeout(function(){
+                document.getElementsByClassName('completeWord ')[0].style.background  = "";
+            },2000)
         }
+
 
 
     }

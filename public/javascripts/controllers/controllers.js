@@ -2,8 +2,8 @@
  * Created by tal Waserman on 21/02/15.
  */
 mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', function($scope, $http, sounds, util) {
-
-    var imageIndex = 0, wordEntered = [];
+    $scope.val = 0;
+    var imageIndex = 0, wordEntered = [], div, imageLocation;
 
     $scope.keyPressed = function(letter){
 
@@ -12,40 +12,30 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
 
         switch(letter) {
             case "space":
+                util.changeImage();
                 sounds.swipe();
-                if($('.animaleImage img').length > 0)
-                {
-                    $('.animaleImage img').remove();
 
-                    var newimage = $('<img />').attr({
-                        src: "/images/animales/"+imageList[util.getRandomNumber()]
-                    }).css({width:448,height:285 });
+                if(document.getElementsByClassName('completeWord')[0].getElementsByTagName("img").length > 0)
+                    document.getElementsByClassName('enlargedLatter')[0].getElementsByTagName("img")[0].remove();
 
-                    $('.animaleImage').append(newimage);
-
-                    if($('.completeWord img').length > 0)
-                    {
-                        $('.completeWord img').remove();
-                    }
-                }
                 imageIndex++;
                 wordEntered = [];
                 _cleanContainer();
             break;
 
             case "backSpace":
-                if($('.completeWord img').length > 0)
+                if(document.getElementsByClassName('completeWord')[0].getElementsByTagName("img").length > 0)
                 {
-                    $('.completeWord img')[$('.completeWord img').length-1].remove();
+                    document.getElementsByClassName('completeWord')[0].getElementsByTagName("img")[document.getElementsByClassName('completeWord')[0].getElementsByTagName("img").length-1].remove();
                     wordEntered.pop();
                 }
-                if($('.completeWord img').length === 0){
+                if(document.getElementsByClassName('completeWord')[0].getElementsByTagName("img").length === 0){
                     _cleanContainer();
                 }
                 else
                 {
                     //Get image name;
-                    var image = $('.animaleImage img')[0].src.split('/');
+                    var image = document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img")[0].src.split('/');
                     image = image[image.length-1];
 
                     tempObject = {
@@ -57,15 +47,8 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
                     {
                         sounds.success();
                         $('.completeWord').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-                        var score = parseInt($('.smallBox.scoreNumber h1').text());
-                        $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-                        score += 1;
-                        $('.smallBox.scoreNumber').css( "color", "green");
-                        $('.smallBox.scoreNumber h1').text(score);
-                        setTimeout(function(){
-                            $('.smallBox.scoreNumber').css( "color", "black");
-
-                        },4000)
+                        $scope.val = parseInt($scope.val) +1;
+                        util.fadeInOut();
                     }
                 }
 
@@ -73,20 +56,24 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
 
             default:
                 //Letter pressed
-                $('.completeWord').addClass('completeWordContainer');
-                sounds.letter("./voice/"+letter.split('.')[0]+".mp3");
+                var element = document.getElementsByClassName('completeWord')[0];
+                element.className = element.className + " completeWordContainer ";
 
                 var tempObject;
 
                 //Update word on screen
-                var imageLocation =  "images/letters/"+letter;
-                var div = $('<img src="'+imageLocation+'" style="float:right;width:60px;height:60px">');
-                $('.completeWord').append(div);
+                imageLocation =  "images/letters/"+letter;
+                div = document.createElement("img");
+                div.src = imageLocation;
+                div.style.width = "60px" ;
+                div.style.height = "60px" ;
+                div.style.float = "right";
+                document.getElementsByClassName('completeWord')[0].appendChild(div);
 
                 wordEntered.push(letter);
 
                 //Get image name;
-                var image = $('.animaleImage img')[0].src.split('/');
+                var image = document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img")[0].src.split('/');
                 image = image[image.length-1];
 
                 tempObject = {
@@ -97,38 +84,38 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
                 if(_checkWord(tempObject))
                 {
                     sounds.success();
-                    $('.completeWord').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-                    var score = parseInt($('.smallBox.scoreNumber h1').text());
-                    $('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-                    score += 1;
-                    $('.smallBox.scoreNumber').css( "color", "green");
-                    $('.smallBox.scoreNumber h1').text(score);
-                    setTimeout(function(){
-                        $('.smallBox.scoreNumber').css( "color", "black");
+                    $scope.val = parseInt($scope.val) +1;
 
-                    },4000)
+                    //fadeIn fadeOut the score
+                    util.fadeInOut();
+                    util.fadeInOutCompleteWord();
                 }
         }//switch
 
         function _checkWord(array) {
-            var bool;
+            var bool, element;
             for (var i = 0;i<allWords.length  ;i++) {
                 if(allWords[i].image === array.image)
                 {
                     bool = true;
-                    $('.completeWord').addClass('green');
-                    $('.completeWord').removeClass('red');
+                    element = document.getElementsByClassName('completeWord')[0];
+                    element.className = "completeWord completeWordContainer transition" + " green ";
+
                     for(var j = 0;j<array.letters.length ;j++)
                     {
                         if(allWords[i].letters[j] !== array.letters[j])
                         {
                             bool = false;
-                            $('.completeWord').addClass('red');
-                            $('.completeWord').removeClass('green');
+                            element = document.getElementsByClassName('completeWord')[0];
+                            element.className = "completeWord completeWordContainer transition" + " red ";
+
                         }
                     }
                     if(bool && array.letters.length === allWords[i].letters.length)
+                    {
+                        //correct word
                         return bool;
+                    }
                     else
                         bool = false;
                 }
@@ -162,7 +149,7 @@ mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, soun
     }//keyPressed()
 }]);
 mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope, sounds, util) {
-    var newimage, imageList, div;
+    var imageList, div;
     $scope.val = 0;
 
     $scope.keyPressed = function(letter){
@@ -171,17 +158,8 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope,
 
         if(letter === 'space')
         {
-            if(document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img").length > 0)
-            {
-                document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img")[0].remove();
-
-                newimage = document.createElement("img");
-                newimage.src = "/images/animales/"+imageList[util.getRandomNumber()];
-                newimage.style.width = "448px" ;
-                newimage.style.height = "285px" ;
-                document.getElementsByClassName('animaleImage')[0].appendChild(newimage);
-                sounds.swipe();
-            }
+            util.changeImage();
+            sounds.swipe();
         }
         else if(letter !== 'backSpace'){
             /*sounds.letter("./voice/"+letter.split('.')[0]+".mp3");*/
@@ -202,7 +180,7 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope,
                 $scope.val = parseInt($scope.val) +1;
 
                 //fadeIn fadeOut the score
-                _fadeInOut();
+                util.fadeInOut();
             }
             else {
                 sounds.wrong();
@@ -216,18 +194,7 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope,
                 letter = imageLocation.split('/')[2].split('.')[0];
             return (letter === letterFromImage )
         }
-        function _fadeInOut(){
-                document.getElementsByClassName('scoreNumber')[0].style.color = "green";
-                setTimeout(function(){
-                    document.getElementsByClassName('scoreNumber')[0].style.color = "black";
-                },500)
-                setTimeout(function(){
-                    document.getElementsByClassName('scoreNumber')[0].style.color = "green";
-                },1000)
-                setTimeout(function(){
-                    document.getElementsByClassName('scoreNumber')[0].style.color = "black";
-                },1500)
-        }
+
     }//keyPressed()
 
 }]);
