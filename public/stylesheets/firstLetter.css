@@ -140,6 +140,7 @@ textarea{
 .enlargedLatter{
     display: inline-block;
     margin-left: 101px;
+    border-radius: 15px;
 }
 .textAreaContainer{
 

@@ -16,7 +16,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
                 sounds.swipe();
 
                 if(document.getElementsByClassName('completeWord')[0].getElementsByTagName("img").length > 0)
-                    document.getElementsByClassName('enlargedLatter')[0].getElementsByTagName("img")[0].remove();
+                    document.getElementsByClassName('completeWord')[0].innerHTML = "";
 
                 imageIndex++;
                 wordEntered = [];
@@ -123,9 +123,8 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
             return false;
         }
         function _cleanContainer(){
-            $('.completeWord').removeClass('completeWordContainer');
-            $('.completeWord').removeClass('green');
-            $('.completeWord').removeClass('red');
+            element = document.getElementsByClassName('completeWord')[0];
+            element.className = "completeWord";
         }
     } //keyPress
 }]);
@@ -181,6 +180,8 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope,
 
                 //fadeIn fadeOut the score
                 util.fadeInOut();
+                //fadeIn fadeOut the letter
+                util.fadeInOutLetter();
             }
             else {
                 sounds.wrong();

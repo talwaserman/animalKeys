@@ -73,7 +73,6 @@ angular.module('mainApp').factory('util',['$http', function util($http){
             },1500)
         },
         fadeInOutCompleteWord: function(){
-            debugger;
             document.getElementsByClassName('completeWord ')[0].style.background  = "green";
             setTimeout(function(){
                 document.getElementsByClassName('completeWord ')[0].style.background  = "white";
@@ -86,6 +85,21 @@ angular.module('mainApp').factory('util',['$http', function util($http){
             },1500)
             setTimeout(function(){
                 document.getElementsByClassName('completeWord ')[0].style.background  = "";
+            },2000)
+        },
+        fadeInOutLetter: function(){
+            document.getElementsByClassName('enlargedLatter ')[0].style.background  = "green";
+            setTimeout(function(){
+                document.getElementsByClassName('enlargedLatter ')[0].style.background  = "transparent";
+            },500)
+            setTimeout(function(){
+                document.getElementsByClassName('enlargedLatter ')[0].style.background  = "green";
+            },1000)
+            setTimeout(function(){
+                document.getElementsByClassName('enlargedLatter ')[0].style.background  = "transparent";
+            },1500)
+            setTimeout(function(){
+                document.getElementsByClassName('enlargedLatter ')[0].style.background  = "";
             },2000)
         }
 
