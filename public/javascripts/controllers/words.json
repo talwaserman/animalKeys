@@ -32,7 +32,7 @@
         "letters": ["Kaf.png", "Dalet.png", "Vav.png", "Reish.png"]
     },
     {
-        "image": "banana_Bet .jpg",
+        "image": "banana_Bet.jpg",
         "letters": ["Bet.png", "Nun.png", "Nun.png", "Hey.png"]
     },
     {
@@ -48,7 +48,7 @@
         "letters": ["Dalet.png", "Bet.png", "Vav.png", "Reish.png", "Hey.png"]
     },
     {
-        "image": "boat_Samech.JPG",
+        "image": "boat_Samech.jpg",
         "letters": ["Samech.png", "Yud.png", "Reish.png", "Hey.png"]
     },
     {
@@ -132,7 +132,7 @@
         "letters": ["Shin.png", "Ayin.png", "Lamed.png"]
     },
     {
-        "image": "frog_Zadik.JPG",
+        "image": "frog_Zadik.jpg",
         "letters": ["Zadik.png", "Pe.png", "Reish.png", "Dalet.png", "Ayin.png"]
     },
     {
@@ -156,7 +156,7 @@
         "letters": ["Chet.png", "Mem.png", "Vav.png", "Reish.png"]
     },
     {
-        "image": "hands_Yud.JPG",
+        "image": "hands_Yud.jpg",
         "letters": ["Yud.png", "Dalet.png", "Yud.png", "Yud.png", "Mem1.png"]
     },
     {
@@ -188,7 +188,7 @@
         "letters": ["Kuf.png", "Reish.png", "Nun.png", "Pe1.png"]
     },
     {
-        "image": "Kengeru_Kuf.JPG",
+        "image": "Kengeru_Kuf.jpg",
         "letters": ["Kuf.png", "Nun.png", "Gimel.png", "Vav.png", "Reish.png", "Vav.png"]
     },
     {
@@ -396,7 +396,7 @@
         "letters": ["Zadik.png", "Bet.png", "Yud.png"]
     },
     {
-        "image": "vafel_Vav.jpeg",
+        "image": "vafel_Vav.jpg",
         "letters": ["Vav.png", "Pe.png", "Lamed.png"]
     },
     {
@@ -404,7 +404,7 @@
         "letters": ["Vav.png", "Vav.png"]
     },
     {
-        "image": "vilon_Vav.jpeg",
+        "image": "vilon_Vav.jpg",
         "letters": ["Vav.png", "Yud.png", "Lamed.png", "Vav.png", "Nun1.png"]
     },
     {
@@ -424,7 +424,7 @@
         "letters": ["Zain.png", "Chet.png", "Lamed.png"]
     },
     {
-        "image": "Zdaf_Zadik.JPG",
+        "image": "Zdaf_Zadik.jpg",
         "letters": ["Zadik.png", "Dalet.png", "Pe.png", "Yud.png", "Mem1.png"]
     },
     {

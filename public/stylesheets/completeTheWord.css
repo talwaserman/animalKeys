@@ -21,7 +21,7 @@ body {
     float: right;
     position: absolute;
     top: 0px;
-    right: 6%;
+    right: 28px;
     padding: 10px;
     font-size: 110%;
 }
@@ -198,8 +198,7 @@ textarea{
 .subHeader{
     float: right;
     height: inherit;
-    margin-right: 16px;
-    top: 13px;
+    top: 26px;
     right: 0px;
     position: absolute;
 }

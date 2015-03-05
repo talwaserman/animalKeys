@@ -5,6 +5,8 @@ body{
 }
 .cloud {
     cursor: pointer;
+    width: 31%;
+    float: right;
 }
 .cloud img{
     width: 90%;
