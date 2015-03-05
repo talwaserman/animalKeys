@@ -141,10 +141,6 @@ body{
     top: -18px;
     position: relative;
 }
-.gameTitle{
-    display: inherit;
-    width: 500px;
-}
 .gameTitle img{
     margin-left: 6em;
 }

@@ -10,7 +10,6 @@ body {
     width: 100%;
 
 }
-
 #write {
     margin: 0 0 5px;
     padding: 5px;
@@ -63,21 +62,6 @@ body {
 }
 .capslock, .tab, .left-shift {
     clear: left;
-}
-.keyboard .tab, #keyboard .delete {
-    width: 70px;
-}
-.keyboard .capslock {
-    width: 80px;
-}
-.keyboard .return {
-    width: 77px;
-}
-.keyboard .left-shift {
-    width: 95px;
-}
-.keyboard .right-shift {
-    width: 109px;
 }
 .lastitem {
     margin-right: 0;
@@ -195,10 +179,6 @@ textarea{
     top: -18px;
     position: relative;
 }
-.gameTitle{
-    display: inherit;
-    width: 500px;
-}
 .gameTitle img{
     margin-left: 6em;
 }
@@ -226,7 +206,6 @@ textarea{
 
     }
 }
-
 /* Medium devices (desktops, 992px and up) */
 @media (max-width: 1200px) and ( min-width: 813px) {
     .middlePart{
@@ -237,7 +216,6 @@ textarea{
     }
     #container {
         margin: 100px auto;
-        /*width: 1023px;*/
         position: absolute;
         top: 315px;
         left: -9px;

@@ -1,3 +1,27 @@
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .gameTitle {
+        display: inherit;
+        width: 500px;
+        margin: 0 auto;
+    }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: 1200px) and ( min-width: 813px) {
+    .gameTitle {
+        display: inherit;
+        width: 500px;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 813px) {
+    .gameTitle {
+        display: inherit;
+        width: 500px;
+    }
+}
+
+
 .image.backIcon{
     width: 60px;
     height: 60px;
