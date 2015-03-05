@@ -210,6 +210,13 @@ textarea{
     top: 58px;
     left: 22px;
 }
+.transition{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -260,20 +267,3 @@ textarea{
         margin-bottom: 5px;
     }
 }
-
-/* ANIMATIONS
-============================================================================= */
-[ui-view].ng-enter 	{
-    transition:1s;
-    opacity: 0;
-}
-[ui-view].ng-enter-active{
-    opacity: 1;
-}
-[ui-view].ng-leave 	{
-}
-[ui-view].ng-leave-active{
-    transition: 1s;
-    opacity: 0;
-}
-/* ========================================================================= */

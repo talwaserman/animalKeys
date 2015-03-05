@@ -200,19 +200,9 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope,
             {
                 sounds.success();
                 $scope.val = parseInt($scope.val) +1;
-                /*$('.smallBox.scoreNumber').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-                $('.smallBox.scoreNumber').css( "color", "green");
 
-                setTimeout(function(){
-                    $('.smallBox.scoreNumber').css( "color", "black");
-
-                },4000)*/
-
-                //clear enlarged letter
-                /*if($('.enlargedLatter img').length > 0)
-                {
-                    $('.enlargedLatter img').fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
-                }*/
+                //fadeIn fadeOut the score
+                _fadeInOut();
             }
             else {
                 sounds.wrong();
@@ -225,6 +215,18 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope,
                 letterFromImage = imageName.split('_')[1].split('.')[0],
                 letter = imageLocation.split('/')[2].split('.')[0];
             return (letter === letterFromImage )
+        }
+        function _fadeInOut(){
+                document.getElementsByClassName('scoreNumber')[0].style.color = "green";
+                setTimeout(function(){
+                    document.getElementsByClassName('scoreNumber')[0].style.color = "black";
+                },500)
+                setTimeout(function(){
+                    document.getElementsByClassName('scoreNumber')[0].style.color = "green";
+                },1000)
+                setTimeout(function(){
+                    document.getElementsByClassName('scoreNumber')[0].style.color = "black";
+                },1500)
         }
     }//keyPressed()
 
