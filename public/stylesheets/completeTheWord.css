@@ -28,7 +28,7 @@ body {
 
 .countWords h1{
     position: relative;
-    display: inline-flex;
+    display: inline-block;
     top: -4px;
 }
 
