@@ -16,7 +16,14 @@ body {
     top: 105px;
     right: 6%;
     padding: 10px;
-
+}
+.countWords{
+    float: right;
+    position: absolute;
+    top: 20px;
+    right: 6%;
+    padding: 10px;
+    font-size: 110%;
 }
 
 .completeWordContainer{

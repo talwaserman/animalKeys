@@ -3,7 +3,8 @@
  */
 mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', function($scope, $http, sounds, util) {
     $scope.val = 0;
-    var imageIndex = 0, wordEntered = [], div, imageLocation;
+    $scope.numLetters = 5;
+    var imageIndex = 0, wordEntered = [], div, imageLocation, imageLetters;
 
     $scope.keyPressed = function(letter){
 
@@ -21,6 +22,19 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
                 imageIndex++;
                 wordEntered = [];
                 _cleanContainer();
+
+                //Get image name;
+                var image = document.getElementsByClassName('animaleImage')[0].getElementsByTagName("img")[0].src.split('/');
+                image = image[image.length-1];
+                //get image letters
+                for (var i = 0;i<allWords.length  ;i++) {
+                    if(allWords[i].image === image)
+                    {
+                        imageLetters = allWords[i].letters;
+                        $scope.numLetters = imageLetters.length;
+                    }
+                }
+
             break;
 
             case "backSpace":
