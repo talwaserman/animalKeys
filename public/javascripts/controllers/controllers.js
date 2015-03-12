@@ -70,6 +70,7 @@ mainApp.controller('completeTheWordCTR',['$scope','$http','sounds','util', funct
 
             default:
                 //Letter pressed
+                sounds.letter(letter.split('.')[0]);
                 var element = document.getElementsByClassName('completeWord')[0];
                 element.className = element.className + " completeWordContainer ";
 
