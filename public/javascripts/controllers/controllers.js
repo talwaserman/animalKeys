@@ -157,7 +157,7 @@ mainApp.controller('knowTheLettersCTR',['$scope','sounds', function($scope, soun
             div.style.width = "200px" ;
             div.style.height = "200px" ;
             document.getElementsByClassName('enlargedLatter')[0].appendChild(div);
-            /*sounds.letter("./voice/"+letter.split('.')[0]+".mp3");*/
+            sounds.letter(letter.split('.')[0]);
         }
     }//keyPressed()
 }]);
@@ -175,6 +175,7 @@ mainApp.controller('firstLetterCTR',['$scope', 'sounds','util', function($scope,
             sounds.swipe();
         }
         else if(letter !== 'backSpace'){
+            sounds.letter(letter.split('.')[0]);
             /*sounds.letter("./voice/"+letter.split('.')[0]+".mp3");*/
 
             if(document.getElementsByClassName('enlargedLatter')[0].getElementsByTagName("img").length > 0)
